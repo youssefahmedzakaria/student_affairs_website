@@ -4,48 +4,58 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="DashBoard.css">
-	<script src="DashBoard.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/DashBoard.css">
+	<script src="js/DashBoard.js"></script>
 
 	<link rel="icon" type="image/x-icon" href="icon.png">
 	<title>Student Data Dashboard</title>
 </head>
 
 <body>
-	<header class="static_header" hidden>
-		<img src="icon.png" alt="Students affairs" width="100px">
-		<h1>Students Affairs</h1>
-	</header>
+	<div class="header-nav-container">
+		<header>
+			<img class="icon" src="icon.png" alt="Students affairs" width="100px">
+			<h1>Students Affairs</h1>
+		</header>
 
-	<nav>
-		<ul>
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="AboutUs.html">About Us</a>
-			</li>
-			<li>
-				<a href="Login.html">Log In</a>
-			</li>
-		</ul>
-	</nav>
-	<header>
-		<h2>Welcome to the Student Data Dashboard</h2>
-	</header>
+		<nav>
+			<ul>
+				<a href="home.html">
+					<li>Home</li>
+				</a>
+
+				<a href="DashBoard.html">
+					<li>DashBoard</li>
+				</a>
+
+				<a href="AboutUs.html">
+					<li>About Us</li>
+				</a>
+
+				<a href="Login.html">
+					<li>Log In</li>
+				</a>
+
+			</ul>
+		</nav>
+	</div>
+
+	<h2>Welcome to the Student Data Dashboard</h2>
 	<main>
 		<section>
 			<h3>Student Data Table </h3>
-			
-			<table > 
+
+			<table>
 				<thead>
-					<tr >
-						<th>ID<form >
-							<input type="text" id="search" name="search" placeholder="Enter ID" required >
-						</form></th>
-						<th>name<form >
-							<input type="text" id="search" name="search" placeholder="Enter name..." required >
-						</form></th>
+					<tr>
+						<th>ID<form>
+								<input type="text" id="search" name="search" placeholder="Enter ID" required>
+							</form>
+						</th>
+						<th>name<form>
+								<input type="text" id="search" name="search" placeholder="Enter name..." required>
+							</form>
+						</th>
 						<th>DOB</th>
 						<th>GPA</th>
 						<th>Gender</th>
@@ -60,7 +70,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr >
+					<tr>
 						<td>20210458</td>
 						<td>youssefahmed</td>
 						<td>2002-09-29</td>
@@ -80,7 +90,8 @@
 						<td>303022222</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
 					</tr>
 					<tr>
 						<td>20210458</td>
@@ -90,10 +101,10 @@
 						<td>Male</td>
 						<td>1st</td>
 						<td>
-						  <select name="Status">
-							<option value="active" selected>Active</option>
-							<option value="inactive">Inactive</option>
-						  </select>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
 						</td>
 						<td>Computer Science</td>
 						<td>john.smith@gmail.com</td>
@@ -102,9 +113,10 @@
 						<td>AB123456</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
-					  </tr>
-					  <tr>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
+					</tr>
+					<tr>
 						<td>20210589</td>
 						<td>Jane Doe</td>
 						<td>1998-02-14</td>
@@ -112,10 +124,10 @@
 						<td>Female</td>
 						<td>2nd</td>
 						<td>
-						  <select name="Status">
-							<option value="active">Active</option>
-							<option value="inactive" selected>Inactive</option>
-						  </select>
+							<select name="Status">
+								<option value="active">Active</option>
+								<option value="inactive" selected>Inactive</option>
+							</select>
 						</td>
 						<td>Business Administration</td>
 						<td>jane.doe@gmail.com</td>
@@ -124,9 +136,10 @@
 						<td>CD789012</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
-					  </tr>
-					  <tr>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
+					</tr>
+					<tr>
 						<td>20210736</td>
 						<td>Mark Lee</td>
 						<td>2000-05-08</td>
@@ -134,10 +147,10 @@
 						<td>Male</td>
 						<td>3rd</td>
 						<td>
-						  <select name="Status">
-							<option value="active" selected>Active</option>
-							<option value="inactive">Inactive</option>
-						  </select>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
 						</td>
 						<td>Electrical Engineering</td>
 						<td>mark.lee@gmail.com</td>
@@ -146,8 +159,9 @@
 						<td>EF234567</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
-					  </tr>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
+					</tr>
 					<tr>
 						<td>20210153</td>
 						<td>zeiadnasser</td>
@@ -168,7 +182,8 @@
 						<td>3030330301</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
 					</tr>
 					<tr>
 						<td>20211515</td>
@@ -190,7 +205,8 @@
 						<td>303048485</td>
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
-							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td>
 					</tr>
 					<tr>
 						<td>20210247</td>
@@ -213,9 +229,9 @@
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
 							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
-						</td> 
+						</td>
 					</tr>
-					
+
 					<tr>
 						<td>20210789</td>
 						<td>janedoe</td>
@@ -237,9 +253,9 @@
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
 							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
-						</td> 
+						</td>
 					</tr>
-					
+
 					<tr>
 						<td>20210999</td>
 						<td>sarahsmith</td>
@@ -261,12 +277,14 @@
 						<td>
 							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
 							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
-						</td> 
+						</td>
 					</tr>
 				</tbody>
 			</table>
-			<button id="add-student-btn"><a href="AddStudent.html">Add Student</a></button><br> 
-            <button><a href="In_AcitveStudent.html">Students Status</a></button>
+			<div class="add-status-buttons">
+				<button id="add-student-btn"><a href="AddStudent.html">Add Student</a></button>
+				<button><a href="In_AcitveStudent.html">Students Status</a></button>
+			</div>
 		</section>
 	</main>
 	<footer>

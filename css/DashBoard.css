@@ -1,0 +1,160 @@
+html {
+  background-image: linear-gradient(to bottom right, #2d3e50, #e64c66, #1bbc9b);
+}
+
+body {
+  flex-direction: column;
+  color: #ffffff;
+  font-family: "Microsoft Sans Serif";
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  filter: invert(100%);
+  width: 50px;
+  padding-bottom: 15px;
+}
+
+h1 {
+  margin: 10px;
+  font-size: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul li {
+  display: inline;
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 40px;
+  background-color: #117a65;
+}
+
+ul li:hover {
+  cursor: pointer;
+  background-color: #2d3e50;
+  transition: background-color 0.5s ease;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+/* Table */
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+th {
+  background-color: #3B3B3B;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 12px;
+}
+
+td {
+  border: 2px solid black;
+  padding: 12px;
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #6d79b8;
+}
+
+/* 
+tr:nth-child(odd) {
+  background-color: #2d3e50;
+} */
+
+/* Edit Button */
+.button-edit {
+  background-color: #117a65;
+  color: white;
+  padding: 4px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-edit:hover {
+  background-color: #2d3e50;
+}
+
+/* Delete Button */
+.button-delete {
+  background-color: #E64c66;
+  color: white;
+  padding: 4px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+button {
+  display: inline;
+  background-color: #117a65;
+  color: white;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+  font-size: large;
+  transition: background-color 0.3s ease-in-out;
+
+}
+
+.add-status-buttons {
+  text-align: center;
+}
+
+button:hover {
+  background-color: #2d3e50;
+}
+
+footer {
+  margin-top: 50px;
+  color: #ffffff;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  height: 1px;
+}
+
+footer p {
+  margin-bottom: 0px;
+  font-size: small;
+}
