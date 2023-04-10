@@ -1,0 +1,120 @@
+body {
+  background-image: linear-gradient(to bottom right, #2d3e50, #e64c66,#1bbc9b);
+    color: white;
+  }
+
+  
+/* Table */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  th {
+    background-color: #3B3B3B;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  td {
+    border: 2px solid black;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #6d79b8;
+  }
+
+  /* tr:nth-child(odd) {
+    background-color: #2d3e50;
+  } */
+
+
+
+
+
+
+  nav {
+    background-color: #2d3e50; /* set background color */
+    overflow: hidden; /* hide any overflow */
+    border:rgba(0, 0, 0, 0.2);
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul {
+    list-style-type: none; /* remove bullets from list */
+    margin: 0; /* remove default margin */
+    padding: 0; /* remove default padding */
+    display:flex /* display list items in a row */
+  }
+  
+  nav li {
+    flex: 1; /* distribute available space equally among all list items */
+  }
+  
+  nav a {
+    display: block; /* make links fill entire list item */
+    color: white; /* set text color */
+    text-align: center; /* center text within list item */
+    padding: 14px 16px; /* add padding to create space between links */
+    text-decoration: none; /* remove underline from links */
+  }
+  
+  nav a:hover {
+    background-color: #3e8e41;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+
+/* Edit Button */
+.button-edit {
+  background-color: #1bbc9b;
+  color: white;
+  padding: 4px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-edit:hover {
+  background-color: #3e8e41;
+}
+
+/* Delete Button */
+.button-delete {
+  background-color: #E64c66;
+  color: white;
+  padding: 4px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-delete:hover {
+  background-color: #d32f2f;
+}
+
+button {
+  background-color: #1bbc9b;
+  color: white;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+button, nav a {
+  transition: background-color 0.3s ease-in-out;
+}

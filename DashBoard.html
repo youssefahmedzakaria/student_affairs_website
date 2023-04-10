@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="DashBoard.css">
+	<script src="C:\Users\youssef zakaria\OneDrive\Desktop\student_affairs_website\student_affairs_website\DashBoard.js"></script>
+
+	<link rel="icon" type="image/x-icon" href="icon.png">
+	<title>Student Data Dashboard</title>
+</head>
+
+<body>
+	<header class="static_header" hidden>
+		<img src="icon.png" alt="Students affairs" width="100px">
+		<h1>Students Affairs</h1>
+	</header>
+
+	<nav>
+		<ul>
+			<li>
+				<a href="index.html">Home</a>
+			</li>
+			<li>
+				<a href="AboutUs.html">About Us</a>
+			</li>
+			<li>
+				<a href="Login.html">Log In</a>
+			</li>
+		</ul>
+	</nav>
+	<header>
+		<h2>Welcome to the Student Data Dashboard</h2>
+	</header>
+	<main>
+		<section>
+			<h3>Student Data Table </h3>
+			
+			<table > 
+				<thead>
+					<tr >
+						<th>ID<form >
+							<input type="text" id="search" name="search" placeholder="Enter ID" required >
+						</form></th>
+						<th>name<form >
+							<input type="text" id="search" name="search" placeholder="Enter name..." required >
+						</form></th>
+						<th>DOB</th>
+						<th>GPA</th>
+						<th>Gender</th>
+						<th>Level</th>
+						<th>Status</th>
+						<th>Department</th>
+						<th>Email</th>
+						<th>mobile</th>
+						<th>Nationality</th>
+						<th>National ID</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr >
+						<td>20210458</td>
+						<td>youssefahmed</td>
+						<td>2002-09-29</td>
+						<td>3.1</td>
+						<td>Male</td>
+						<td>2nd</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>CS</td>
+						<td>youssefahmed@gmail.com</td>
+						<td>01120700202</td>
+						<td>Egyptian</td>
+						<td>303022222</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
+					</tr>
+					<tr>
+						<td>20210458</td>
+						<td>John Smith</td>
+						<td>1999-01-01</td>
+						<td>3.5</td>
+						<td>Male</td>
+						<td>1st</td>
+						<td>
+						  <select name="Status">
+							<option value="active" selected>Active</option>
+							<option value="inactive">Inactive</option>
+						  </select>
+						</td>
+						<td>Computer Science</td>
+						<td>john.smith@gmail.com</td>
+						<td>1234567890</td>
+						<td>American</td>
+						<td>AB123456</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
+					  </tr>
+					  <tr>
+						<td>20210589</td>
+						<td>Jane Doe</td>
+						<td>1998-02-14</td>
+						<td>3.9</td>
+						<td>Female</td>
+						<td>2nd</td>
+						<td>
+						  <select name="Status">
+							<option value="active">Active</option>
+							<option value="inactive" selected>Inactive</option>
+						  </select>
+						</td>
+						<td>Business Administration</td>
+						<td>jane.doe@gmail.com</td>
+						<td>0987654321</td>
+						<td>Canadian</td>
+						<td>CD789012</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
+					  </tr>
+					  <tr>
+						<td>20210736</td>
+						<td>Mark Lee</td>
+						<td>2000-05-08</td>
+						<td>3.7</td>
+						<td>Male</td>
+						<td>3rd</td>
+						<td>
+						  <select name="Status">
+							<option value="active" selected>Active</option>
+							<option value="inactive">Inactive</option>
+						  </select>
+						</td>
+						<td>Electrical Engineering</td>
+						<td>mark.lee@gmail.com</td>
+						<td>2345678901</td>
+						<td>Korean</td>
+						<td>EF234567</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td> 
+					  </tr>
+					<tr>
+						<td>20210153</td>
+						<td>zeiadnasser</td>
+						<td>2003-01-23</td>
+						<td>3.6</td>
+						<td>Male</td>
+						<td>2nd</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>CS</td>
+						<td>zeiadnasser@gmail.com</td>
+						<td>012345678910</td>
+						<td>Egyptian</td>
+						<td>3030330301</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td>
+					</tr>
+					<tr>
+						<td>20211515</td>
+						<td>tareqmahfouz</td>
+						<td>1975-9-9</td>
+						<td>3.1</td>
+						<td>Male</td>
+						<td>2nd</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>CS</td>
+						<td>tareqmahfouz@gmail.com</td>
+						<td>01011121314</td>
+						<td>Egyptian</td>
+						<td>303048485</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>						</td>
+					</tr>
+					<tr>
+						<td>20210247</td>
+						<td>johndoe</td>
+						<td>1999-03-15</td>
+						<td>3.7</td>
+						<td>Male</td>
+						<td>4th</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>Math</td>
+						<td>johndoe@gmail.com</td>
+						<td>01050234567</td>
+						<td>American</td>
+						<td>201903141</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td> 
+					</tr>
+					
+					<tr>
+						<td>20210789</td>
+						<td>janedoe</td>
+						<td>2001-06-22</td>
+						<td>3.9</td>
+						<td>Female</td>
+						<td>2nd</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>English</td>
+						<td>janedoe@gmail.com</td>
+						<td>01234567890</td>
+						<td>British</td>
+						<td>405201203</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td> 
+					</tr>
+					
+					<tr>
+						<td>20210999</td>
+						<td>sarahsmith</td>
+						<td>2003-11-03</td>
+						<td>3.5</td>
+						<td>Female</td>
+						<td>3rd</td>
+						<td>
+							<select name="Status">
+								<option value="active" selected>Active</option>
+								<option value="inactive">Inactive</option>
+							</select>
+						</td>
+						<td>Science</td>
+						<td>sarahsmith@gmail.com</td>
+						<td>01012345678</td>
+						<td>Canadian</td>
+						<td>202103021</td>
+						<td>
+							<button class="button-edit"><a href="EditStudent.html">Edit</a></button>
+							<button class="button-delete" onclick="deleteStudent(this)">Delete</button>
+						</td> 
+					</tr>
+				</tbody>
+			</table>
+			<button id="add-student-btn"><a href="AddStudent.html">Add Student</a></button><br> 
+            <button><a href="In_AcitveStudent.html">Students Status</a></button>
+		</section>
+	</main>
+	<footer>
+		&copy; All Right Reserved, FCAI-CU Students.
+	</footer>
+</body>
+
+</html>

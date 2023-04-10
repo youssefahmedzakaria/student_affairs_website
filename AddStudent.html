@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Students Affairs</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+
+</head>
+
+<body>
+
+    <header class="static_header">
+        <img src="icon.png" alt="Students affairs" width="100px">
+        <h1>Students Affairs</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="DashBoard.html">DashBoard</a>
+            </li>
+            <li>
+                <a href="AboutUs.html">About Us</a>
+            </li>
+            <li>
+                <a href="Login.html">Log In</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h2>Add Student</h2>
+    <form method="post" action="mailto:alid38168@gmail.com">
+        <label for="id">Student Id:</label>
+        <input type="number" id="id" name="studentId" required><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="8" required><br>
+
+        <label for="date">Date of Birth:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="gpa">GPA:</label>
+        <input type="number" id="gpa" name="gpa" min="0" max="4" step="0.01" required><br>
+
+        <label>Gender:</label>
+        <label>
+            <input type="radio" name="gender" value="male" checked> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label><br>
+
+        <label>Choose a level:
+            <select name="level">
+                <option value="1">Level 1</option>
+                <option value="2">Level 2</option>
+                <option value="3">Level 3</option>
+                <option value="4">Level 4</option>
+            </select>
+        </label><br>
+
+        <label>Status:
+            <select name="status">
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
+            </select>
+        </label><br>
+
+        <label>Department:
+            <select name="department">
+                <option value="test1">IS</option>
+                <option value="test2">CS</option>
+                <option value="test3">IT</option>
+                <option value="test3">DS</option>
+                <option value="test3">AI</option>
+            </select>
+        </label><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="mNumber">Mobile:</label>
+        <input type="tel" id="mNumber" name="mNumber" required><br>
+
+         
+        <label>Nationality:
+            <select name="Nationality"> <option value="">-- select one --</option>
+                <option value="afghan">Egyptian</option>
+                <option value="albanian">Albanian</option>
+                <option value="algerian">Algerian</option>
+                <option value="american">American</option>
+                <option value="andorran">Andorran</option>
+                <option value="angolan">Angolan</option>
+                <option value="antiguans">Antiguans</option>
+                <option value="argentinean">Argentinean</option>
+                <option value="armenian">Armenian</option>
+            </select>
+        </label><br>
+        
+        <label for="National ID">National ID:</label>
+        <input type="tel" id="mNumber" name="mNumber" required><br>
+
+        <input type="submit" value="AddStudent">
+
+    </form>
+
+    <footer>
+        &copy; All Right Reserved, FCAI-CU Students.
+    </footer>
+</body>
+
+</html>

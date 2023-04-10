@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="discreption" content="Welcom to FCAI-CU students affairs website..." />
+    <title>Students Affairs</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+</head>
+
+<body>
+    <header class="static_header">
+        <img src="icon.png" alt="Students affairs" width="100px">
+        <h1>Students Affairs</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="DashBoard.html">DashBoard</a>
+            </li>
+            <li>
+                <a href="AboutUs.html">About Us</a>
+            </li>
+            <!-- <li>
+                <a href="Login.html">Log In</a>
+            </li> -->
+        </ul>
+    </nav>
+
+    <h2>Register New Admin</h2>
+    <section>
+        <form method="post">
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
+
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" required><br>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Write a username without spaces" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="write a valid email" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8"
+                required><br>
+
+            <label for="Conpassword">Confirm Password:</label>
+            <input type="password" id="Conpassword" name="conpassword" placeholder="Write the same password"
+                minlength="8" required><br>
+
+            <input type="reset" value="Reset">
+            <input type="submit" value="Register"><br>
+            <a href="Login.html">Already Have An Account</a>
+        </form>
+    </section>
+
+    <footer>
+        &copy; All Right Reserved, FCAI-CU Students.
+    </footer>
+
+</body>
+
+</html>
