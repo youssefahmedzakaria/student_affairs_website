@@ -1,16 +1,20 @@
 html {
     background-image: linear-gradient(to bottom right, #2d3e50, #e64c66, #1bbc9b);
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 97.8vh;
+    min-height: 100vh;
+    color: #ffffff;
     font-family: "Microsoft Sans Serif";
-    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {

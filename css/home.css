@@ -1,10 +1,11 @@
 html {
     background-image: linear-gradient(to bottom right, #2d3e50, #e64c66, #1bbc9b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 body {
     height: 100%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
