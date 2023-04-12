@@ -41,17 +41,17 @@ h1 {
 
 ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
 
-ul a {
+a {
     text-decoration: none;
     color: #fff;
 }
 
 ul li {
-    display: inline;
     margin: 20px;
     padding: 20px;
     font-size: 20px;
@@ -103,4 +103,30 @@ footer {
     width: 100%;
     height: 1px;
     font-size: small;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .header-nav-container {
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    ul li {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    footer p {
+        margin-top: 15px;
+        font-size: small;
+    }
 }
