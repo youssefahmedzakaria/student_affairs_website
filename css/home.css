@@ -41,6 +41,7 @@ h1 {
 
 ul {
     list-style-type: none;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -51,7 +52,7 @@ ul a {
 }
 
 ul li {
-    display: inline;
+    display: flex;
     margin: 20px;
     padding: 20px;
     font-size: 20px;
