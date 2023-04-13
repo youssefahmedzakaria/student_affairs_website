@@ -64,14 +64,21 @@ function addDataToPageFrom(studentsData) {
         var actionc = document.createElement("td");
 
 
-        var anchorEdit = document.createElement("a");
-        anchorEdit.href = "../EditStudent.html";
+        // var anchorEdit = document.createElement("a");
+        // anchorEdit.href = "../EditStudent.html";
 
         var editBtn = document.createElement("button");
         editBtn.className = "button-edit";
+        (function (studentId) {
+            editBtn.addEventListener("click", (e) => {
+                var stdToEdit = studentId.toString();
+                var toEditPage = '../EditStudent.html?record=' + stdToEdit;
+                window.location.href = toEditPage;
+            });
+        })(student.rcrdId);
         editBtn.appendChild(document.createTextNode("Edit"));
 
-        anchorEdit.appendChild(editBtn);
+        // anchorEdit.appendChild(editBtn);
 
         var delBtn = document.createElement("button");
         delBtn.className = "button-delete";
@@ -80,7 +87,8 @@ function addDataToPageFrom(studentsData) {
         });
         delBtn.appendChild(document.createTextNode("Delete"))
 
-        actionc.appendChild(anchorEdit);
+        // actionc.appendChild(anchorEdit);
+        actionc.appendChild(editBtn);
         actionc.appendChild(delBtn);
         row.appendChild(actionc);
 
@@ -111,3 +119,5 @@ function getDataFromLocalStorage() {
         addDataToPageFrom(records);
     }
 }
+
+// console.log(typeof (Da))
