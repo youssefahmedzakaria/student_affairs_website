@@ -1,6 +1,5 @@
 let id = document.querySelector(".id");
-let username = document.querySelector(".username");
-let password = document.querySelector(".password");
+let stdname = document.querySelector(".name");
 let date = document.querySelector(".date");
 let gpa = document.querySelector(".gpa");
 let gender = document.querySelector(".gender");
@@ -25,55 +24,54 @@ getDataFromLocalStorage();
 
 // Add data
 submit.onclick = function () {
-    if ((id.value && username.value && password.value && date.value && gpa.value && gender.value &&  level.value &&sta.value &&department.value && email.value && mobile.value && nationality.value && nationalID.value ) !== ""){
+    if ((id.value && stdname.value && date.value && gpa.value && gender.value && level.value && sta.value && department.value && email.value && mobile.value && nationality.value && nationalID.value) !== "") {
         const data = {
+            rcrdId: Date.now(),
             Id: id.value,
-            Username: username.value,
-            Password: password.value,
+            Name: stdname.value,
             Date: date.value,
             Gpa: gpa.value,
             Gender: gender.value,
             Level: level.value,
             Status: sta.value,
             Departemnt: department.value,
-            Email : email.value,
+            Email: email.value,
             Mobile: mobile.value,
             Nationality: nationality.value,
             NationalID: nationalID.value,
 
         }
 
-        id.value ="";
-        username.value = "";
-        password.value = "";
+        id.value = "";
+        stdname.value = "";
         date.value = "";
         gpa.value = "";
-        gender.value =""; 
+        gender.value = "";
         level.value = "";
         sta.value = "";
-        department.value =""; 
+        department.value = "";
         email.value = "";
         mobile.value = "";
         nationality.value = "";
-        nationalID.value ="";
+        nationalID.value = "";
 
         arrayOfData.push(data);
-        
+
         addDataToLocalStorage(arrayOfData);
 
-        
+
     }
 
 };
 
-function addDataToLocalStorage(arrayOfData){
+function addDataToLocalStorage(arrayOfData) {
     window.localStorage.setItem("Data", JSON.stringify(arrayOfData));
 }
 
 function getDataFromLocalStorage() {
     let Add = window.localStorage.getItem("Data");
     if (Add) {
-      let Student = JSON.parse(Add);
+        let Student = JSON.parse(Add);
     }
-    
+
 }
