@@ -1,4 +1,3 @@
-# student_affairs_website
 # Student Management System
 
 This is a student management system web application that allows users to enable editing of student information and view active and inactive students.
