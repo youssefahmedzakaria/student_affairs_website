@@ -50,6 +50,7 @@
                 <div class="col-75">
                     <input type="number" class="id" name="studentId" required min="20180000" max="20222999"><br>
                 </div>
+                <br>
             </div>
             <div class="row">
                 <div class="col-25">
@@ -58,7 +59,7 @@
                 <div class="col-75">
                     <input type="text" class="name" name="name" required><br>
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-25">
                     <label for="date">Date of Birth:</label>
@@ -67,6 +68,7 @@
                     <input type="date" class="date" name="date" required><br>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-25">
                     <label for="gpa">GPA:</label>
@@ -74,25 +76,23 @@
                 <div class="col-75">
                     <input type="number" class="gpa" name="gpa" min="0" max="4" step="0.01" required><br>
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-25">
                     <label>Gender:</label>
-                </div>
-                <div class="col-75">
                     <label>
                         <input type="radio" name="gender" value="Male" checked> Male
                     </label>
                     <label>
                         <input type="radio" name="gender" value="Female"> Female
-                    </label><br>
+                    </label>
                 </div>
-            </div>
+            </div><br><br>
             <div class="row">
                 <div class="col-25">
                     <label>Choose a level:</label>
                 </div>
-                <div class="col-75">
+                <div class="drop">
                     <select name="level" class="level">
                         <option value="1">Level 1</option>
                         <option value="2">Level 2</option>
@@ -100,25 +100,24 @@
                         <option value="4">Level 4</option>
                     </select><br>
                 </div>
-            </div>
+            </div><br><br>
             <div class="row">
                 <div class="col-25">
-                    <label>Status:</label>
-                </div>
-                <div class="col-75">
+                    <label><b>Status:</b></label>
                     <label>
-                        <input type="radio" name="status" value="active" checked>Active
+                        <input type="radio" id="radio-active" name="status" value="active" checked>Active
                     </label>
                     <label>
-                        <input type="radio" name="status" value="Inactive">Inactive
-                    </label><br>
+                        <input type="radio" id="radio-inactive" name="status" value="Inactive">Inactive
+                    </label>
+                </label><br><br>
                 </div>
-            </div>
+            </div><br><br>
             <div class="row">
                 <div class="col-25">
                     <label>Department:</label>
                 </div>
-                <div class="col-75">
+                <div class="drop">
                     <select name="department" class="department">
                         <option value="General">General</option>
                         <option value="IS">IS</option>
@@ -128,7 +127,7 @@
                         <option value="AI">AI</option>
                     </select><br>
                 </div>
-            </div>
+            </div><br><br>
             <div class="row">
                 <div class="col-25">
                     <label for="email">Email:</label>
@@ -136,7 +135,7 @@
                 <div class="col-75">
                     <input type="email" class="email" name="email" required><br>
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-25">
                     <label for="mNumber">Mobile:</label>
@@ -144,12 +143,12 @@
                 <div class="col-75">
                     <input type="tel" class="mNumber" name="mNumber" required><br>
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-25">
                     <label>Nationality:</label>
                 </div>
-                <div class="col-75">
+                <div class="drop">
                     <select name="Nationality" class="Nationality">
                         <option value="">-- select one --</option>
                         <option value="Egyptian">Egyptian</option>
@@ -397,7 +396,7 @@
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select><br>
                 </div>
-            </div>
+            </div><br>
             <div class="row">
                 <div class="col-25">
                     <label for="NationalID">National ID:</label>
