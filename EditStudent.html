@@ -10,31 +10,37 @@
 </head>
 
 <body>
-    <header>
-        <img src="icon.png" alt="Students affairs" width="100px">
-        <h1>Students Affairs</h1>
-    </header>
+    <div class="header-nav-container">
+		<header>
+			<img class="icon" src="icon.png" alt="Students affairs" width="100px">
+			<h1>Students Affairs</h1>
+		</header>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="home.html">Home</a>
-            </li>
-            <li>
-                <a href="DashBoard.html">DashBoard</a>
-            </li>
-            <li>
-                <a href="AboutUs.html">About Us</a>
-            </li>
-            <li>
-                <a href="Login.html">Log In</a>
-            </li>
-        </ul>
-    </nav>
+		<nav>
+			<ul>
+				<a href="home.html">
+					<li>Home</li>
+				</a>
+
+				<a href="DashBoard.html">
+					<li>DashBoard</li>
+				</a>
+
+				<a href="AboutUs.html">
+					<li>About Us</li>
+				</a>
+
+				<a href="Login.html">
+					<li>Log In</li>
+				</a>
+
+			</ul>
+		</nav>
+	</div>
 
 
     <h2>Edit Student Data</h2>
-    <form method="post" action="mailto:aa@gmail.com">
+    <form method="post" onsubmit="goBack()">
 
         <label for="id">Id:</label>
         <input type="number" id="id" name="studentId" required><br><br>
@@ -47,34 +53,34 @@
 
         <label for="gpa">GPA:</label>
         <input type="number" id="gpa" name="gpa" min="0" max="4" step="0.01" required><br><br>
-        <label>Gender:</label>
+        <label class="container">Gender:</label>
         <label>
             <input type="radio" id="radio-male" name="gender" value="Male" checked> Male
         </label>
         <label>
             <input type="radio" id="radio-female" name="gender" value="Female"> Female
         </label>
-        <br><br>
+        <br><br><br>
 
-        <label>Choose a level:
+        <label class = "drop">Choose a level:
             <select name="level" id="level">
                 <option value="1">Level 1</option>
                 <option value="2">Level 2</option>
                 <option value="3">Level 3</option>
                 <option value="4">Level 4</option>
             </select>
-        </label><br>
+        </label><br><br><br>
 
-        <label>Status:
+        <label > Status: </label>
             <label>
                 <input type="radio" id="radio-active" name="status" value="active" checked>Active
             </label>
             <label>
                 <input type="radio" id="radio-inactive" name="status" value="Inactive">Inactive
             </label>
-        </label><br>
+        </label><br><br><br>
 
-        <label>Department:
+        <label class = "drop">Department:
             <select name="department" id="department" class="department">
                 <option value="General">General</option>
                 <option value="IS">IS</option>
@@ -83,7 +89,7 @@
                 <option value="DS">DS</option>
                 <option value="AI">AI</option>
             </select>
-        </label><br><br>
+        </label><br><br><br>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
@@ -91,7 +97,7 @@
         <label for="mobile">Mobile:</label>
         <input type="tel" id="mobile" name="mobile" required><br><br>
 
-        <label>Nationality:
+        <label class = "drop">Nationality:
             <select name="Nationality" id="nationality">
                 <option value="">-- select one --</option>
                 <option value="Egyptian">Egyptian</option>
@@ -338,7 +344,7 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
-        </label><br>
+        </label><br><br>
 
         <label for="National ID">National ID:</label>
         <input type="tel" id="nationalId" name="National ID" required><br>
@@ -352,5 +358,4 @@
     </footer>
     <script src="js/EditStudent.js"></script>
 </body>
-
 </html>

@@ -54,7 +54,11 @@ save.onclick = function () {
         studentsData[index].Mobile = mobile.value;
         studentsData[index].Nationality = nationality.value;
         studentsData[index].NationalID = nationalID.value;
-
         localStorage.setItem('Data', JSON.stringify(studentsData));
     }
+};
+
+function goBack() {
+    event.preventDefault(); // prevent form submission
+    window.history.back(); // go back to previous page
 };
