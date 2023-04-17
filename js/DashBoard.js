@@ -4,9 +4,60 @@ tbody.innerHTML = '';
 
 getDataFromLocalStorage();
 
+document.getElementById("search_Id-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    var searchId = document.getElementById("search_Id").value;
+    searchById(searchId);
+});
+
+document.getElementById("search_Name-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    var searchName = document.getElementById("search_Name").value;
+    searchByName(searchName);
+});
+
+document.getElementById("search_Id").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        var searchId = document.getElementById("search_Id").value;
+        searchById(searchId);
+    }
+});
+
+document.getElementById("search_Name").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        var searchName = document.getElementById("search_Name").value;
+        searchByName(searchName);
+    }
+});
+
+function searchById(id) {
+    var filteredData = studentsData.filter(function (student) {
+        return student.Id === id;
+    });
+    tbody.innerHTML = '';
+    addDataToPageFrom(filteredData);
+}
+
+function searchByName(name) {
+    var filteredData = studentsData.filter(function (student) {
+        return student.Name.toLowerCase().includes(name.toLowerCase());
+    });
+    tbody.innerHTML = '';
+    addDataToPageFrom(filteredData);
+}
+
+function deleteStudent(stdId) {
+    if (confirm("Are you sure you want to delete this student?")) {
+        studentsData = studentsData.filter((record) => record.rcrdId != stdId);
+        addDataToLocalStorage(studentsData);
+        tbody.innerHTML = '';
+        addDataToPageFrom(studentsData);
+    }
+}
+
 function addDataToPageFrom(studentsData) {
-
-
     for (var i = 0; i < studentsData.length; i++) {
         var student = studentsData[i];
         var row = document.createElement('tr');
@@ -23,7 +74,6 @@ function addDataToPageFrom(studentsData) {
         var dobCell = document.createElement('td');
         dobCell.textContent = student.Date;
         row.appendChild(dobCell);
-
 
         var gpac = document.createElement("td");
         gpac.textContent = student.Gpa;
@@ -63,10 +113,6 @@ function addDataToPageFrom(studentsData) {
 
         var actionc = document.createElement("td");
 
-
-        // var anchorEdit = document.createElement("a");
-        // anchorEdit.href = "../EditStudent.html";
-
         var editBtn = document.createElement("button");
         editBtn.className = "button-edit";
         (function (studentId) {
@@ -78,8 +124,6 @@ function addDataToPageFrom(studentsData) {
         })(student.rcrdId);
         editBtn.appendChild(document.createTextNode("Edit"));
 
-        // anchorEdit.appendChild(editBtn);
-
         var delBtn = document.createElement("button");
         delBtn.className = "button-delete";
         delBtn.addEventListener("click", (e) => {
@@ -87,23 +131,16 @@ function addDataToPageFrom(studentsData) {
         });
         delBtn.appendChild(document.createTextNode("Delete"))
 
-        // actionc.appendChild(anchorEdit);
         actionc.appendChild(editBtn);
         actionc.appendChild(delBtn);
         row.appendChild(actionc);
 
-
-
         tbody.appendChild(row);
-
     }
 }
 
-function deleteStudent(stdId) {
-    if (confirm("Are you sure you want to delete this student?")) {
-        studentsData = studentsData.filter((record) => record.rcrdId != stdId);
-        addDataToLocalStorage(studentsData);
-        tbody.innerHTML = '';
+function getDataFromLocalStorage() {
+    if (studentsData) {
         addDataToPageFrom(studentsData);
     }
 }
@@ -111,31 +148,3 @@ function deleteStudent(stdId) {
 function addDataToLocalStorage(arrayOfData) {
     window.localStorage.setItem("Data", JSON.stringify(arrayOfData));
 }
-
-function getDataFromLocalStorage() {
-    let data = window.localStorage.getItem("Data");
-    if (data) {
-        let records = JSON.parse(data);
-        addDataToPageFrom(records);
-    }
-}
-var searchid = document.getElementById("search_Id");
-searchid.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        window.location.href = "../search.html?search_Id=" + encodeURIComponent(searchid.value);
-    }
-});
-
-var searchN = document.getElementById("search_Name");
-searchN.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        window.location.href = "../search.html?search_Name=" + encodeURIComponent(searchN.value);
-    }
-});
-// searchid.onkeyup = function (e ){
-//     if( e.key === 13){
-//         window.location.href = "../search.html?search_Id = "+searchid.value;
-// }}
-
-
-// console.log(typeof (Da))

@@ -96,6 +96,8 @@ tr:nth-child(even) {
   background-color: #6d79b8;
 }
 
+
+
 /* 
 tr:nth-child(odd) {
   background-color: #2d3e50;
@@ -151,6 +153,18 @@ button:hover {
   background-color: #2d3e50;
 }
 
+form {
+  display: flex;
+}
+
+#search_Id-btn,
+#search_Name-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+
+}
+
 footer {
   margin-top: auto;
   padding-top: 20px;
@@ -166,25 +180,25 @@ footer {
 @media screen and (max-width: 1000px) {
 
   .header-nav-container {
-      margin: 10px;
+    margin: 10px;
   }
 
   h1 {
-      font-size: 30px;
+    font-size: 30px;
   }
 
   ul li {
-      margin: 10px;
-      padding: 10px;
-      font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
   }
 
   p {
-      font-size: large;
+    font-size: large;
   }
 
   footer p {
-      margin-top: 15px;
-      font-size: small;
+    margin-top: 15px;
+    font-size: small;
   }
 }

@@ -29,7 +29,7 @@ if (parseInt(studentsData[index].rcrdId) === parseInt(dateParam)) {
     stdname.value = studentsData[index].Name;
     date.value = studentsData[index].Date;
     gpa.value = studentsData[index].Gpa;
-    studentsData[index].Gender === "male" ? male.checked = true : female.checked = true;
+    studentsData[index].Gender === "Male" ? male.checked = true : female.checked = true;
     level.value = studentsData[index].Level;
     studentsData[index].Status === "Active" ? active.checked = true : inactive.checked = true;
     dep.value = studentsData[index].Departemnt;
@@ -46,7 +46,7 @@ save.onclick = function () {
         studentsData[index].Name = stdname.value;
         studentsData[index].Date = date.value;
         studentsData[index].Gpa = gpa.value;
-        studentsData[index].Gender = male.checked ? "male" : "female";
+        studentsData[index].Gender = male.checked ? "Male" : "Female";
         studentsData[index].Level = level.value;
         studentsData[index].Status = active.checked ? "Active" : "Inactive";
         studentsData[index].Departemnt = dep.value;

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/DashBoard.css">
-	<script src="js/DashBoard.js"></script>
+	<!-- <script src="js/DashBoard.js"></script> -->
 
 	<link rel="icon" type="image/x-icon" href="icon.png">
 	<title>Student Data Dashboard</title>
@@ -33,12 +33,14 @@
 				<thead class="header-info">
 					<tr>
 						<th>ID<form>
-								<input type="text" id="search_Id" name="search_Id" placeholder="Enter ID" required>
+								<input type="number" id="search_Id" name="search_Id" placeholder="Enter ID" required>
+								<button id="search_Id-btn">Search</button>
 							</form>
 						</th>
 						<th>Name<form>
 								<input type="text" id="search_Name" name="search_Name" placeholder="Enter name..."
 									required>
+								<button id="search_Name-btn">Search</button>
 							</form>
 						</th>
 						<th>DOB</th>
@@ -66,8 +68,8 @@
 	<footer>
 		<p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
 	</footer>
-	<script src="js/RistrictedPages.js"></script>
 	<script src="js/DashBoard.js"></script>
+	<script src="js/RistrictedPages.js"></script>
 </body>
 
 </html>
