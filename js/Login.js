@@ -6,7 +6,7 @@ const admins = JSON.parse(localStorage.getItem('admins')) || [];
 
 loginForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  
+
   const email = emailInput.value;
   const password = passwordInput.value;
 
@@ -15,6 +15,8 @@ loginForm.addEventListener('submit', (event) => {
   if (admin) {
     alert('Login successful!');
     window.location.href = 'home.html';
+    sessionStorage.setItem("LoggedInAdmin", "true");
+
   } else {
     alert('Invalid email or password.');
   }
