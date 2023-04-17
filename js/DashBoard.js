@@ -119,5 +119,23 @@ function getDataFromLocalStorage() {
         addDataToPageFrom(records);
     }
 }
+var searchid = document.getElementById("search_Id");
+searchid.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        window.location.href = "../search.html?search_Id=" + encodeURIComponent(searchid.value);
+    }
+});
+
+var searchN = document.getElementById("search_Name");
+searchN.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        window.location.href = "../search.html?search_Name=" + encodeURIComponent(searchN.value);
+    }
+});
+// searchid.onkeyup = function (e ){
+//     if( e.key === 13){
+//         window.location.href = "../search.html?search_Id = "+searchid.value;
+// }}
+
 
 // console.log(typeof (Da))
