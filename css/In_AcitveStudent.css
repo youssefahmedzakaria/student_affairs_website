@@ -96,6 +96,7 @@ tr:nth-child(even) {
     background-color: #117a65;
 }
 
+
 button {
     display: inline;
     background-color: #117a65;
@@ -107,14 +108,12 @@ button {
     margin: 0 auto;
     font-size: large;
     transition: background-color 0.3s ease-in-out;
-    text-align: center;
-}
 
+}
 
 .back {
     text-align: center;
 }
-
 
 button:hover {
     background-color: #2d3e50;

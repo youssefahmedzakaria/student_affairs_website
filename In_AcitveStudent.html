@@ -4,36 +4,29 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="DashBoard.css">
+	<!-- <link rel="stylesheet" type="text/css" href="DashBoard.css"> -->
 	<link rel="icon" type="image/x-icon" href="icon.png">
-	<link rel="stylesheet" href="css/In_ActiveStudent.css">
+	<link rel="stylesheet" href="css/In_AcitveStudent.css">
 	<title>Student Data Dashboard</title>
 </head>
 
 <body>
-	<header class="header-nav-container">
+	<div class="header-nav-container">
+		<header>
+			<img class="icon" src="icon.png" alt="Students affairs" width="100px">
+			<h1>Students Affairs</h1>
+		</header>
 
-		<img src="icon.png" alt="Students affairs" width="100px">
-		<h1>Students Affairs</h1>
-	</header>
-
-	<nav>
-		<ul id="nav">
-		</ul>
-	</nav>
+		<nav>
+			<ul id="nav">
+			</ul>
+		</nav>
 	</div>
 
-	<header>
-		<h2>Welcome to the Student Data Dashboard</h2>
-	</header>
+	<h2>Welcome to the Student Data Dashboard</h2>
 	<main>
 		<section>
 			<h3>Student Data Table (Active)</h3>
-			<form>
-				<label for="search">Search by Name:</label>
-				<input type="text" id="search" name="search" placeholder="Enter name...">
-				<button type="submit">Search</button>
-			</form>
 			<table>
 				<thead>
 					<tr>
@@ -58,11 +51,6 @@
 		</section>
 		<section>
 			<h3>Student Data Table (IN_Active)</h3>
-			<form>
-				<label for="search">Search by Name:</label>
-				<input type="text" id="search" name="search" placeholder="Enter name...">
-				<button type="submit">Search</button>
-			</form>
 			<table>
 				<thead>
 					<tr>
@@ -83,13 +71,14 @@
 				<tbody class="in-active-stds"></tbody>
 			</table>
 			<div class="back">
-				<button><a href="DashBoard.html">Back</a></button>
+				<a href="DashBoard.html"><button>Back</button></a>
 			</div>
 		</section>
 	</main>
 	<footer>
 		&copy; All Right Reserved, FCAI-CU Students.
 	</footer>
+	<script src="js/RistrictedPages.js"></script>
 	<script src="js/In_ActiveStudent.js"></script>
 </body>
 
