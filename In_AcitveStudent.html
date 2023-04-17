@@ -3,25 +3,34 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="DashBoard.css">
 	<link rel="icon" type="image/x-icon" href="icon.png">
+	<link rel="stylesheet" href="css/In_ActiveStudent.css">
 	<title>Student Data Dashboard</title>
 </head>
 
 <body>
-	<div class="header-nav-container">
-		<header>
-			<img class="icon" src="icon.png" alt="Students affairs" width="100px">
-			<h1>Students Affairs</h1>
-		</header>
+	<header class="header-nav-container">
+		
+		<img src="icon.png" alt="Students affairs" width="100px">
+		<h1>Students Affairs</h1>
+	</header>
 
-		<nav>
-			<ul id="nav">
-			</ul>
-		</nav>
-	</div>
-
+	<nav class="header-nav-container">
+		<ul>
+			<li>
+				<a href="home.html">Home</a>
+			</li>
+			<li>
+				<a href="DashBoard.html">DashBoard</a>
+			</li>
+			<li>
+				<a href="AboutUs.html">About Us</a>
+			</li>
+			<li>
+				<a href="Login.html">Log In</a>
+			</li>
+		</ul>
+	</nav>
 	<header>
 		<h2>Welcome to the Student Data Dashboard</h2>
 	</header>
@@ -32,6 +41,7 @@
 				<label for="search">Search by Name:</label>
 				<input type="text" id="search" name="search" placeholder="Enter name...">
 				<button type="submit">Search</button>
+				<br><br>
 			</form>
 			<table>
 				<thead>
@@ -61,6 +71,7 @@
 				<label for="search">Search by Name:</label>
 				<input type="text" id="search" name="search" placeholder="Enter name...">
 				<button type="submit">Search</button>
+				<br><br>
 			</form>
 			<table>
 				<thead>
@@ -85,9 +96,8 @@
 		</section>
 	</main>
 	<footer>
-		<p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
+		&copy; All Right Reserved, FCAI-CU Students.
 	</footer>
-	<script src="js/RistrictedPages.js"></script>
 	<script src="js/In_ActiveStudent.js"></script>
 </body>
 
