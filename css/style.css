@@ -1,4 +1,4 @@
-/* css for all pages */
+/* CSS for all pages */
 html {
     background-image: linear-gradient(to bottom right, #2d3e50, #e64c66, #1bbc9b);
     background-repeat: no-repeat;
@@ -13,96 +13,32 @@ body {
     color: #ffffff;
     font-family: "Microsoft Sans Serif";
     margin: 0;
-    padding: 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
-/* css for headers */
-
-
+/* CSS for headers */
 h2 {
     margin: 20px 0 0px;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    color: #FFFFFF;
-}
-
-/* css for index page */
-
-.web-projects-heading {
-    letter-spacing: 5px;
-}
-
-.home-link {
-    text-decoration: none;
-    flex-basis: calc(50% - 10px);
-}
-
-.projects-buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.projects-buttons-container button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: calc(50% - 10px);
-    height: 80px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
     color: #ffffff;
-    border: none;
-    border-radius: 10px;
 }
 
-.projects-buttons-container button[disabled] {
-    background-color: #8f8e8e;
-}
-
-button.our-chosen-project {
-    background-color: #2d3e50;
-    width: 100%;
-}
-
-button.our-chosen-project:hover {
-    box-shadow: 0px 0px 5px 0px #2d3e50;
-    cursor: pointer;
-    transition: background-color 0.5s ease-in-out;
-}
-
-/* css for navigation bar */
-.header-nav-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    padding: 10px;
-    z-index: 999;
-}
-
-header {
-    display: flex;
-    align-items: center;
-}
-
+/* CSS for navigation bar */
 .icon {
     filter: invert(100%);
     width: 50px;
-    padding-bottom: 15px;
+    margin-top: 5px;
+    display: inline;
 }
 
 .project-heading {
-    margin: 10px;
+    margin: 8px;
     font-size: 50px;
+    display: inline;
+    padding-bottom: 5px;
 }
 
 nav ul {
@@ -114,7 +50,7 @@ nav ul {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
 }
 
 nav ul li {
@@ -132,7 +68,18 @@ nav ul li:hover {
     transition: background-color 0.5s ease-in-out;
 }
 
-/* css for home page */
+.header-nav-container {
+    background-color: #212d3a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 9999;
+}
+
+/* CSS for home page */
 .info {
     display: flex;
     justify-content: center;
@@ -141,15 +88,13 @@ nav ul li:hover {
     flex-direction: column;
     text-align: center;
     font-size: x-large;
-    margin-top: 150px;
     padding-top: 150px;
 }
 
-/* css for tables */
+/* CSS for tables */
 table {
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
     margin-bottom: 16px;
     text-align: center;
     width: 90%;
@@ -163,20 +108,18 @@ caption {
 
 thead {
     background-color: #2d3e50;
-    color: white;
+    color: #ffffff;
 }
-
 
 th {
     background-color: #212d3a;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     padding: 12px;
 }
 
-
 .std-table td {
-    border: 2px solid black;
+    border: 2px solid #ffffff;
     padding: 12px;
     text-align: center;
 }
@@ -190,11 +133,11 @@ tfoot {
     font-weight: bold;
 }
 
-/* css for buttons */
+/* CSS for buttons */
 button {
     display: inline;
     background-color: #117a65;
-    color: white;
+    color: #ffffff;
     padding: 15px 50px;
     border: none;
     border-radius: 10px;
@@ -202,18 +145,16 @@ button {
     margin: 0 auto;
     font-size: large;
     transition: background-color 0.3s ease-in-out;
-
 }
 
 button:hover {
     background-color: #2d3e50;
 }
 
-
 /* Edit Button */
 .button-edit {
     background-color: #117a65;
-    color: white;
+    color: #ffffff;
     padding: 4px 16px;
     border: none;
     border-radius: 10px;
@@ -221,13 +162,13 @@ button:hover {
 }
 
 .button-edit:hover {
-    background-color: #E64c66;
+    background-color: #e64c66;
 }
 
 /* Delete Button */
 .button-delete {
     background-color: #c70202;
-    color: white;
+    color: #ffffff;
     padding: 4px 16px;
     border: none;
     border-radius: 10px;
@@ -248,13 +189,11 @@ button:hover {
     margin-left: 10px;
     padding: 5px 10px;
     font-size: 12px;
-
 }
 
-
-/* css for forms */
+/* CSS for forms */
 form {
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transition: 0.3s;
@@ -274,7 +213,7 @@ form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #2D3E50;
+    color: #2d3e50;
     display: inline-block;
     margin-right: 30px;
 }
@@ -289,10 +228,10 @@ form input[type="text"] {
     width: 95%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #AEAEAE;
+    border: 1px solid #aeaeae;
     border-radius: 5px;
     font-size: 16px;
-    color: #2D3E50;
+    color: #2d3e50;
 }
 
 form input[type="reset"],
@@ -302,15 +241,15 @@ form input[type="submit"] {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #1BBC9B;
-    color: #FFFFFF;
+    background-color: #1bbc9b;
+    color: #ffffff;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-    background-color: #E64C66;
+    background-color: #e64c66;
 }
 
 form label {
@@ -330,38 +269,32 @@ form input[type="radio"] {
 
 .drop::after {
     content: "\25BE";
-    /* Unicode for down arrow */
     position: absolute;
     top: 50%;
     right: 10px;
     transform: translateY(-55%);
     pointer-events: none;
-    /* Prevents arrow from being clicked */
     font-size: 16px;
-    color: #2D3E50;
+    color: #2d3e50;
 }
 
 .drop select {
     appearance: none;
-    /* Remove default appearance */
     outline: none;
-    /* Remove default outline */
     width: 100%;
-    /* Set width to 100% of container */
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #AEAEAE;
+    border: 1px solid #aeaeae;
     border-radius: 5px;
     font-size: 16px;
-    color: #2D3E50;
-    background-color: #FFFFFF;
+    color: #2d3e50;
+    background-color: #ffffff;
 }
-
 
 form a {
     display: block;
     margin-top: 10px;
-    color: #E64C66;
+    color: #e64c66;
     text-align: center;
     text-decoration: none;
 }
@@ -370,23 +303,83 @@ form a:hover {
     text-decoration: underline;
 }
 
-
-
-
-
-/* css for footer in all pages */
+/* CSS for footer in all pages */
 footer {
-    margin-top: auto;
-    color: #ffffff;
-    padding-bottom: 30px;
-    text-align: center;
-    align-self: flex-end;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    height: 1px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #212d3a;
 }
-
 
 footer p {
     margin-top: 3px;
+    padding-top: 10px;
     font-size: small;
+}
+
+/* CSS for index page */
+.index {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: "Microsoft Sans Serif";
+    margin: 0;
+    padding: 0;
+}
+
+.web-projects-heading {
+    letter-spacing: 5px;
+    margin: 5px;
+    padding: auto;
+}
+
+.home-link {
+    text-decoration: none;
+    flex-basis: calc(50% - 10px);
+}
+
+.projects-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+
+}
+
+.projects-buttons-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(50% - 10px);
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+}
+
+.projects-buttons-container button[disabled] {
+    background-color: #8f8e8e;
+    cursor: auto;
+}
+
+button.our-chosen-project {
+    background-color: #2d3e50;
+    width: 100%;
+}
+
+button.our-chosen-project:hover {
+    box-shadow: 0px 0px 5px 0px #2d3e50;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
 }
