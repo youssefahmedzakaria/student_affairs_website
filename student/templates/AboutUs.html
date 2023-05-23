@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="discreption" content="Welcom to FCAI-CU students affairs website..." />
     <title>About Us</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
     <!-- <link rel="stylesheet" href="css/AboutUs.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
     <div class="header-nav-container">
         <header>
-            <img class="icon" src="icon.png" alt="Students affairs" width="100px">
+            <img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
             <h1 class="project-heading">Students Affairs</h1>
         </header>
 
@@ -82,7 +83,7 @@
     <footer>
         <p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
     </footer>
-    <script src="js/RistrictedPages.js"></script>
+    <script src="{% static 'RistrictedPages.js' %}"></script>
 </body>
 
 </html>

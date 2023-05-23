@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <link rel="stylesheet" type="text/css" href="css/DashBoard.css"> -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
 	<!-- <script src="js/DashBoard.js"></script> -->
 
-	<link rel="icon" type="image/x-icon" href="icon.png">
+	<link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>Student Data Dashboard</title>
 </head>
@@ -16,7 +17,7 @@
 <body class="dash-board">
 	<div class="header-nav-container">
 		<header>
-			<img class="icon" src="icon.png" alt="Students affairs" width="100px">
+			<img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
 			<h1 class="project-heading">Students Affairs</h1>
 		</header>
 
@@ -60,15 +61,15 @@
 		</tbody>
 	</table>
 	<div class="add-status-buttons">
-		<a href="AddStudent.html"><button>Add Student</button></a>
-		<a href="In_AcitveStudent.html"><button>Students Status</button></a>
+		<a href="/add_student"><button>Add Student</button></a>
+		<a href="/in_acitve_student"><button>Students Status</button></a>
 	</div>
 
 	<footer>
 		<p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
 	</footer>
-	<script src="js/DashBoard.js"></script>
-	<script src="js/RistrictedPages.js"></script>
+	<script src="{% static 'DashBoard.js' %}"></script>
+	<script src="{% static 'RistrictedPages.js' %}"></script>
 </body>
 
 </html>

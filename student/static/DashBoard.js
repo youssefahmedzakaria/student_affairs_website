@@ -9,7 +9,7 @@ document.getElementById("search_Id-btn").addEventListener("click", (e) => {
     var searchId = document.getElementById("search_Id").value;
     searchById(searchId);
 });
-
+html
 document.getElementById("search_Name-btn").addEventListener("click", (e) => {
     e.preventDefault();
     var searchName = document.getElementById("search_Name").value;
@@ -118,7 +118,7 @@ function addDataToPageFrom(studentsData) {
         (function (studentId) {
             editBtn.addEventListener("click", (e) => {
                 var stdToEdit = studentId.toString();
-                var toEditPage = '../EditStudent.html?record=' + stdToEdit;
+                var toEditPage = '../edit_student?record=' + stdToEdit;
                 window.location.href = toEditPage;
             });
         })(student.rcrdId);

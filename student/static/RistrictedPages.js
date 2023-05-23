@@ -22,6 +22,7 @@ function logOut() {
     hideLoggedOutPages();
 }
 
+
 function displayLoggedInPages() {
     while (nav.firstChild) {
         nav.firstChild.remove();
@@ -31,7 +32,7 @@ function displayLoggedInPages() {
     homeLItem.appendChild(document.createTextNode("home"));
 
     var homeAnchor = document.createElement("a");
-    homeAnchor.href = "home.html";
+    homeAnchor.href = "/home";
     homeAnchor.setAttribute("class", "menu__item");
     homeAnchor.setAttribute("data-tooltip", "Home");
     homeAnchor.id = "home";
@@ -43,7 +44,7 @@ function displayLoggedInPages() {
     dashBoardLItem.appendChild(document.createTextNode("dashboard"));
 
     var dashBoardAnchor = document.createElement("a");
-    dashBoardAnchor.href = "DashBoard.html";
+    dashBoardAnchor.href = "/dash_board";
     dashBoardAnchor.setAttribute("class", "menu__item");
     dashBoardAnchor.setAttribute("data-tooltip", "DashBoard");
     dashBoardAnchor.id = "dashboard";
@@ -55,7 +56,7 @@ function displayLoggedInPages() {
     aboutUsLItem.appendChild(document.createTextNode("groups"));
 
     var aboutUsAnchor = document.createElement("a");
-    aboutUsAnchor.href = "AboutUs.html";
+    aboutUsAnchor.href = "/about_us";
     aboutUsAnchor.setAttribute("class", "menu__item");
     aboutUsAnchor.setAttribute("data-tooltip", "About Us");
     aboutUsAnchor.id = "about";
@@ -68,7 +69,7 @@ function displayLoggedInPages() {
     logOutLItem.id = "LogOut";
 
     var logOutAnchor = document.createElement("a");
-    logOutAnchor.href = "home.html";
+    logOutAnchor.href = "/home";
     logOutAnchor.setAttribute("class", "menu__item");
     logOutAnchor.setAttribute("data-tooltip", "Log Out");
     logOutAnchor.appendChild(logOutLItem);
@@ -85,7 +86,7 @@ function hideLoggedOutPages() {
     homeLItem.appendChild(document.createTextNode("home"));
 
     var homeAnchor = document.createElement("a");
-    homeAnchor.href = "home.html";
+    homeAnchor.href = "/home";
     homeAnchor.setAttribute("class", "menu__item");
     homeAnchor.setAttribute("data-tooltip", "Home");
     homeAnchor.id = "home";
@@ -98,7 +99,7 @@ function hideLoggedOutPages() {
     
 
     var aboutUsAnchor = document.createElement("a");
-    aboutUsAnchor.href = "AboutUs.html";
+    aboutUsAnchor.href = "/about_us";
     aboutUsAnchor.setAttribute("class", "menu__item");
     aboutUsAnchor.setAttribute("data-tooltip", "About Us");
     aboutUsAnchor.id = "about";
@@ -110,7 +111,7 @@ function hideLoggedOutPages() {
     loginLItem.appendChild(document.createTextNode("login"));
 
     var loginAnchor = document.createElement("a");
-    loginAnchor.href = "Login.html";
+    loginAnchor.href = "/login";
     loginAnchor.setAttribute("class", "menu__item");
     loginAnchor.setAttribute("data-tooltip", "Log In");
     loginAnchor.id = "login";

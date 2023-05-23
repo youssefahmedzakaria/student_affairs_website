@@ -1,22 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="discreption" content="Welcom to FCAI-CU students affairs website..." />
     <title>Students Affairs</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
-    <!-- <link rel="stylesheet" href="css/AddStudent.css"> -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="css/EditStudent.css"> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
-
     <div class="header-nav-container">
         <header>
-            <img class="icon" src="icon.png" alt="Students affairs" width="100px">
+            <img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
             <h1 class="project-heading">Students Affairs</h1>
         </header>
 
@@ -27,9 +27,9 @@
     </div>
 
 
-    <h2>Add Student</h2>
+    <h2>Edit Student Data</h2>
     <div class="container">
-        <form class="std-form" method="post">
+        <form class="edit-std-form" method="post" onsubmit="goBack()">
 
             <label for="id">Id:</label>
             <input type="number" id="id" name="studentId" required><br><br>
@@ -338,15 +338,15 @@
             <label for="National ID">National ID:</label>
             <input type="tel" id="nationalId" name="National ID" required><br>
 
-            <input type="submit" id="add" value="Add Student">
+            <input type="submit" id="save" value="Save Edited Data">
+
         </form>
     </div>
-    <br>
     <footer>
         <p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
     </footer>
-    <script src="js/RistrictedPages.js"></script>
-    <script src="js/AddStudent.js"></script>
+    <script src="{% static 'RistrictedPages.js' %}"></script>
+    <script src="{% static 'EditStudent.js' %}"></script>
 </body>
 
 </html>
