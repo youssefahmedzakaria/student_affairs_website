@@ -14,7 +14,7 @@ loginForm.addEventListener('submit', (event) => {
 
   if (admin) {
     alert('Login successful!');
-    window.location.href = '/home';
+    window.location.href = '../home';
     sessionStorage.setItem("LoggedInAdmin", "true");
 
   } else {
