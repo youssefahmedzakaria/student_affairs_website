@@ -1,15 +1,45 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from django.views.decorators.csrf import requires_csrf_token
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
-
+from .models import Data_Student
+##### Add Student
+############################################################
 def AddStudent(request):
   template = loader.get_template('AddStudent.html')
-  return HttpResponse(template.render())
+  return HttpResponse(template.render({}, request))
 
+@csrf_exempt
+def AddStudent_record(request):
+  StId = request.POST['studentId']
+  stdname = request.POST['name']
+  date = request.POST['date']
+  gpa = request.POST['gpa']
+  ############################
+  RadioG = request.POST.get('gender')
+  if RadioG == 'Male':
+    gender = 'Male'
+  else:
+    gender = 'Female'
+  ############################    
+  level = request.POST['level']
+  ############################
+  RadioS = request.POST.get('status')
+  if RadioS == 'Active':
+    status = 'Active'
+  else:
+    status = 'Inactive'
+  ############################
+  department = request.POST['department']
+  email = request.POST['email']
+  mobile = request.POST['mobile']
+  nationality = request.POST['Nationality']
+  nationalID = request.POST['National ID']
+  Student = Data_Student(StuID = StId, StuName = stdname, DOB = date, GPA = gpa, Gender = gender, level = level, Status = status, Department = department, Email = email, Mobile = mobile, Nationality = nationality, NationalityID = nationalID)
+  Student.save()
+  return HttpResponseRedirect(reverse('DashBoard'))
+############################################################
 def index(request):
   template = loader.get_template('index.html')
   return HttpResponse(template.render())
@@ -43,8 +73,3 @@ def RegisterNewAdmin(request):
   return HttpResponse(template.render())
 
 
-@csrf_exempt 
-def your_view(request):
-    if request.method == "POST":
-        template = loader.get_template('DashBoard.html')
-        return HttpResponse(template.render())

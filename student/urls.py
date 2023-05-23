@@ -12,5 +12,5 @@ urlpatterns = [
     path('in_acitve_student', views.In_AcitveStudent, name ='In_AcitveStudent'),
     path('login',views.login , name ='Login'),
     path('register_new_admin', views.RegisterNewAdmin, name = 'RegisterNewAdmin'),
-    path('addrecord/', views.your_view, name='addrecord'),
+    path('addStudent/', views.AddStudent_record, name='AddStudent_record'),
 ]
