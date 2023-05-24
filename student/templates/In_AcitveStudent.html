@@ -1,89 +1,147 @@
+{% extends 'base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" type="text/css" href="DashBoard.css"> -->
-	<link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
-	<!-- <link rel="stylesheet" href="css/In_AcitveStudent.css"> -->
-	<link rel="stylesheet" href="{% static 'style.css' %}">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<title>Student Data Dashboard</title>
-</head>
+{% block content %}
 
-<body>
-	<div class="header-nav-container">
-		<header>
-			<img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
-			<h1 class="project-heading">Students Affairs</h1>
-		</header>
+<h2>Welcome to the Student Data Dashboard</h2>
+<main>
+	<section>
+		<table>
+			<caption>Student Data Table (Active)</caption>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>DOB</th>
+					<th>GPA</th>
+					<th>Gender</th>
+					<th>Level</th>
+					<th>Status</th>
+					<th>Department</th>
+					<th>Email</th>
+					<th>mobile</th>
+					<th>Nationality</th>
+					<th>National ID</th>
+				</tr>
+			</thead>
+			<tbody class="active-stds">
+				{% for record in stds_data %}
+				{% if record.Status == "Active" %}
+				<tr>
+					<td>
+						{{ record.StuID }}
+					</td>
+					<td>
+						{{ record.StuName }}
+					</td>
+					<td>
+						{{ record.DOB }}
+					</td>
+					<td>
+						{{ record.GPA }}
+					</td>
+					<td>
+						{{ record.Gender }}
+					</td>
+					<td>
+						{{ record.level }}
+					</td>
+					<td>
+						{{ record.Status }}
+					</td>
+					<td>
+						{{ record.Department }}
+					</td>
+					<td>
+						{{ record.Email }}
+					</td>
+					<td>
+						{{ record.Mobile }}
+					</td>
+					<td>
+						{{ record.Nationality }}
+					</td>
+					<td>
+						{{ record.NationalityID }}
+					</td>
+					<!-- Add more <td> elements for each field you want to display -->
+				</tr>
+				{% endif %}
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+	<section>
+		<table>
+			<caption>Student Data Table (IN_Active)</caption>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>DOB</th>
+					<th>GPA</th>
+					<th>Gender</th>
+					<th>Level</th>
+					<th>Status</th>
+					<th>Department</th>
+					<th>Email</th>
+					<th>mobile</th>
+					<th>Nationality</th>
+					<th>National ID</th>
+				</tr>
+			</thead>
+			<tbody class="in-active-stds">
+				{% for record in stds_data %}
+				{% if record.Status == "Inactive" %}
+				<tr>
+					<td>
+						{{ record.StuID }}
+					</td>
+					<td>
+						{{ record.StuName }}
+					</td>
+					<td>
+						{{ record.DOB }}
+					</td>
+					<td>
+						{{ record.GPA }}
+					</td>
+					<td>
+						{{ record.Gender }}
+					</td>
+					<td>
+						{{ record.level }}
+					</td>
+					<td>
+						{{ record.Status }}
+					</td>
+					<td>
+						{{ record.Department }}
+					</td>
+					<td>
+						{{ record.Email }}
+					</td>
+					<td>
+						{{ record.Mobile }}
+					</td>
+					<td>
+						{{ record.Nationality }}
+					</td>
+					<td>
+						{{ record.NationalityID }}
+					</td>
+					<!-- Add more <td> elements for each field you want to display -->
+				</tr>
+				{% endif %}
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="back">
+			<a href="/dash_board"><button>Back</button></a>
+		</div>
+	</section>
+</main>
 
-		<nav>
-			<ul id="nav">
-			</ul>
-		</nav>
-	</div>
-
-
-	<h2>Welcome to the Student Data Dashboard</h2>
-	<main>
-		<section>
-			<table>
-				<caption>Student Data Table (Active)</caption>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>DOB</th>
-						<th>GPA</th>
-						<th>Gender</th>
-						<th>Level</th>
-						<th>Status</th>
-						<th>Department</th>
-						<th>Email</th>
-						<th>mobile</th>
-						<th>Nationality</th>
-						<th>National ID</th>
-					</tr>
-				</thead>
-				<tbody class="active-stds">
-
-				</tbody>
-			</table>
-		</section>
-		<section>
-			<table>
-				<caption>Student Data Table (IN_Active)</caption>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Name</th>
-						<th>DOB</th>
-						<th>GPA</th>
-						<th>Gender</th>
-						<th>Level</th>
-						<th>Status</th>
-						<th>Department</th>
-						<th>Email</th>
-						<th>mobile</th>
-						<th>Nationality</th>
-						<th>National ID</th>
-					</tr>
-				</thead>
-				<tbody class="in-active-stds"></tbody>
-			</table>
-			<div class="back">
-				<a href="/dash_board"><button>Back</button></a>
-			</div>
-		</section>
-	</main>
-	<footer>
-		&copy; All Right Reserved, FCAI-CU Students.
-	</footer>
-	<script src="{% static 'RistrictedPages.js' %}"></script>
-	<script src="{% static 'In_ActiveStudent.js' %}"></script>
-</body>
-
-</html>
+<script src="{% static 'RistrictedPages.js' %}"></script>
+<!-- <script src="{% static 'In_ActiveStudent.js' %}"></script> -->
+{% endblock content %}

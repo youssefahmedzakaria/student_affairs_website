@@ -1,89 +1,61 @@
+{% extends 'base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="discreption" content="Welcom to FCAI-CU students affairs website..." />
-    <title>About Us</title>
-    <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
-    <!-- <link rel="stylesheet" href="css/AboutUs.css"> -->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-
-<body>
-    <div class="header-nav-container">
-        <header>
-            <img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
-            <h1 class="project-heading">Students Affairs</h1>
-        </header>
-
-        <nav>
-            <ul id="nav">
-            </ul>
-        </nav>
-    </div>
+{% block content %}
 
 
-    <table>
-        <caption>Our Team Members<br></caption>
-        <thead>
-            <tr>
-                <td><b>Name </td></b>
-                <td><b>ID </td></b>
-                <td><b>Section</td></b>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> Doaa Ali El-Sayed </td>
-                <td>20211034</td>
-                <td>s21</td>
-            </tr>
-            <tr>
-                <td> Tareq Mahfouz Mohamed</td>
-                <td>20211058</td>
-                <td>s24</td>
-            </tr>
-            <tr>
-                <td> Youssef Ahmed Zakaria</td>
-                <td>20210458</td>
-                <td>s21</td>
-            </tr>
-            <tr>
-                <td> Ziad Nasser Shaaban</td>
-                <td>20210153</td>
-                <td>s21</td>
-            </tr>
-            <tr>
-                <td> Omnia Magdy Abdelnaby </td>
-                <td>20211018</td>
-                <td>s23</td>
-            </tr>
-            <tr>
-                <td> Youssef Mahmoud Okasha </td>
-                <td>20210486</td>
-                <td>s21</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">Supervised by Dr.Neamat El-Tazi</td>
-            </tr>
-        </tfoot>
-    </table>
+<table>
+    <caption>Our Team Members<br></caption>
+    <thead>
+        <tr>
+            <td><b>Name </td></b>
+            <td><b>ID </td></b>
+            <td><b>Section</td></b>
 
-    </ul>
-    </table>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> Doaa Ali El-Sayed </td>
+            <td>20211034</td>
+            <td>s21</td>
+        </tr>
+        <tr>
+            <td> Tareq Mahfouz Mohamed</td>
+            <td>20211058</td>
+            <td>s24</td>
+        </tr>
+        <tr>
+            <td> Youssef Ahmed Zakaria</td>
+            <td>20210458</td>
+            <td>s21</td>
+        </tr>
+        <tr>
+            <td> Ziad Nasser Shaaban</td>
+            <td>20210153</td>
+            <td>s21</td>
+        </tr>
+        <tr>
+            <td> Omnia Magdy Abdelnaby </td>
+            <td>20211018</td>
+            <td>s23</td>
+        </tr>
+        <tr>
+            <td> Youssef Mahmoud Okasha </td>
+            <td>20210486</td>
+            <td>s21</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Supervised by Dr.Neamat El-Tazi</td>
+        </tr>
+    </tfoot>
+</table>
+
+</ul>
+</table>
 
 
-    <footer>
-        <p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
-    </footer>
-    <script src="{% static 'RistrictedPages.js' %}"></script>
-</body>
-
-</html>
+<script src="{% static 'RistrictedPages.js' %}"></script>
+{% endblock content %}
