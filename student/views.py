@@ -3,10 +3,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-<<<<<<< Updated upstream
-from student.models import Data_Student
-# Add Student
-=======
+
 from .models import Data_Student
 
 
@@ -14,11 +11,10 @@ from .models import AdminsData
 import json
 from django.shortcuts import render, redirect
 from django.contrib import messages
+import json
+
 
 ##### Add Student
->>>>>>> Stashed changes
-############################################################
-
 
 def AddStudent(request):
     template = loader.get_template('AddStudent.html')
@@ -52,28 +48,19 @@ def AddStudent_record(request):
     nationality = request.POST['Nationality']
     nationalID = request.POST['National ID']
     Student = Data_Student(StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
-                           Department=department, Email=email, Mobile=mobile, Nationality=nationality, NationalityID=nationalID)
+                Department=department, Email=email, Mobile=mobile, Nationality=nationality, NationalityID=nationalID)
     Student.save()
     return HttpResponseRedirect(reverse('DashBoard'))
 ############################################################
 
 
 def index(request):
-<<<<<<< Updated upstream
     template = loader.get_template('index.html')
     return HttpResponse(template.render())
 
 
 def login(request):
-    template = loader.get_template('login.html')
-    return HttpResponse(template.render())
-
-=======
-  template = loader.get_template('index.html')
-  return HttpResponse(template.render())
-def login(request):
     return render(request, 'login.html')
->>>>>>> Stashed changes
 
 def AboutUs(request):
     template = loader.get_template('AboutUs.html')
@@ -97,17 +84,17 @@ def home(request):
 
 def In_AcitveStudent(request):
     stds_data = Data_Student.objects.all()
-
-<<<<<<< Updated upstream
+    
     context = {
         'stds_data': stds_data,
     }
 
     # template = loader.get_template('In_AcitveStudent.html')
     return render(request, 'In_AcitveStudent.html', context)
-=======
+
+
 def RegisterNewAdmin(request):
-  return render(request, 'RegisterNewAdmin.html', context={'csrf_token': request.COOKIES['csrftoken']})
+    return render(request, 'RegisterNewAdmin.html', context={'csrf_token': request.COOKIES['csrftoken']})
 
 
 def validate_login(request):
@@ -122,7 +109,6 @@ def validate_login(request):
             return JsonResponse({'valid': False})
 
     return JsonResponse({'message': 'Invalid request method.'})
-
 
 def register_new_admin(request):
     if request.method == 'POST':
@@ -142,16 +128,8 @@ def register_new_admin(request):
 
         admin = AdminsData(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
         admin.save()
->>>>>>> Stashed changes
-
+        
         messages.success(request, 'Registered successfully!')
         
         return redirect('RegisterNewAdmin')  
 
-<<<<<<< Updated upstream
-def RegisterNewAdmin(request):
-    template = loader.get_template('RegisterNewAdmin.html')
-    return HttpResponse(template.render())
-=======
-    return render(request, 'RegisterNewAdmin.html')
->>>>>>> Stashed changes

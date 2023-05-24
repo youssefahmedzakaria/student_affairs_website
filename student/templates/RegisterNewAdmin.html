@@ -1,24 +1,33 @@
-{% extends 'base.html'%}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-<<<<<<< Updated upstream
-{% block content %}
-
-<h2>Register New Admin</h2>
-<section>
-    <form class="register-form" method="post">
-        <label for="firstname">First name</label>
-        <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
-=======
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="discreption" content="Welcom to FCAI-CU students affairs website..." />
+    <meta name="discreption" content="Welcome to FCAI-CU students affairs website..." />
     <title>Students Affairs</title>
     <link rel="icon" type="image/x-icon" href="{% static 'icon.png' %}">
-    <!-- <link rel="stylesheet" href="css/RegisterNewAdmin.css"> -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .alert {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .alert.success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+
+        .alert.error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var alerts = document.getElementsByClassName('alert');
@@ -26,12 +35,43 @@
                 var alert = alerts[i];
                 setTimeout(function () {
                     alert.style.display = 'none';
-                }, 2000);
+                }, 2000); 
             }
         });
     </script>
 </head>
->>>>>>> Stashed changes
+<body>
+    <div class="header-nav-container">
+        <header>
+            <img class="icon" src="{% static 'icon.png' %}" alt="Students affairs" width="100px">
+            <h1 class="project-heading">Students Affairs</h1>
+        </header>
+
+        <nav>
+            <ul id="nav">
+            </ul>
+        </nav>
+    </div>
+
+    <h2>Register New Admin</h2>
+<section>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if error %}
+        <div class="alert error">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form class="register-form" method="post" action="{% url 'register_new_admin' %}">
+        {% csrf_token %}
+        <label for="firstname">First name</label>
+        <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
 
         <label for="lastname">Last name</label>
         <input type="text" id="lastname" name="lastname" placeholder="Last Name" required><br>
@@ -42,70 +82,19 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="write a valid email" required><br>
 
-<<<<<<< Updated upstream
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8"
-            required><br>
-=======
-    <h2>Register New Admin</h2>
-    <section>
-        {% if messages %}
-        {% for message in messages %}
-            <div class="alert success">
-                {{ message }}
-            </div>
-        {% endfor %}
-        {% endif %}
-
-        {% if error %}
-            <div class="alert error">
-                {{ error }}
-            </div>
-        {% endif %}
-        <form class="register-form" method="post" action="{% url 'register_new_admin' %}">
-            {% csrf_token %}
-            <label for="firstname">First name</label>
-            <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
->>>>>>> Stashed changes
+        <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8" required><br>
 
         <label for="Conpassword">Confirm Password:</label>
-        <input type="password" id="Conpassword" name="conpassword" placeholder="Write the same password" minlength="8"
-            required><br>
-
+        <input type="password" id="Conpassword" name="Conpassword" placeholder="Write the same password" minlength="8" required><br>
+        
         <input type="reset" value="Reset">
         <input type="submit" value="Register"><br>
         <a href="/login">Already Have An Account</a>
     </form>
 </section>
 
-<<<<<<< Updated upstream
+
 <script src={% static 'RistrictedPages.js' %}></script>
 <script src={% static 'RegisterNewAdmin.js' %}></script>
-{% endblock content %}
-=======
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="write a valid email" required><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8"
-                required><br>
-
-            <label for="Conpassword">Confirm Password:</label>
-            <input type="password" id="Conpassword" name="Conpassword" placeholder="Write the same password"
-                minlength="8" required><br>
-            
-            <input type="reset" value="Reset">
-            <input type="submit" value="Register"><br>
-            <a href="/login">Already Have An Account</a>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 Students Affairs, FCAI-CU. All rights reserved.</p>
-    </footer>
-    <script src="{% static 'RistrictedPages.js' %}"></script>
-    {% comment %} <script src="{% static 'RegisterNewAdmin.js' %}"></script> {% endcomment %}
 </body>
-
-</html>
->>>>>>> Stashed changes
