@@ -14,3 +14,17 @@ class Data_Student(models.Model):
     Nationality = models.CharField(max_length=255)
     NationalityID = models.IntegerField(null = True)
 
+
+    def __str__(self):
+        return self.StuName
+    
+    
+class AdminsData(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    password = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.username

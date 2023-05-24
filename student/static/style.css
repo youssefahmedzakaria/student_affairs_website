@@ -415,3 +415,21 @@ button.our-chosen-project:hover {
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
 }
+
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.alert.success {
+    background-color: transparent;
+    color: red;
+    border: 40px;
+}
+
+.alert.error {
+    background-color: transparent;
+    color: red;
+    border: 40px ;
+}
