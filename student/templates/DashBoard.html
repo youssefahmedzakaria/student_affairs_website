@@ -2,6 +2,61 @@
 {% load static %}
 
 {% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Function to perform the search
+        function performSearch() {
+            var searchId = $('#search_Id').val();
+            var searchName = $('#search_Name').val();
+
+            $.ajax({
+                url: '/search_students/',
+                data: {
+                    'search_id': searchId,
+                    'search_name': searchName
+                },
+                dataType: 'json',
+                success: function(data) {
+                    // Clear the existing table rows
+                    $('.records').empty();
+
+                    // Append the new rows based on the search results
+                    for (var i = 0; i < data.students.length; i++) {
+                        var student = data.students[i];
+                        var newRow = '<tr>' +
+                            '<td>' + student.id + '</td>' +
+                            '<td>' + student.name + '</td>' +
+                            '<td>' + student.dob + '</td>' +
+                            '<td>' + student.gpa + '</td>' +
+                            '<td>' + student.gender + '</td>' +
+                            '<td>' + student.level + '</td>' +
+                            '<td>' + student.status + '</td>' +
+                            '<td>' + student.department + '</td>' +
+                            '<td>' + student.email + '</td>' +
+                            '<td>' + student.mobile + '</td>' +
+                            '<td>' + student.nationality + '</td>' +
+                            '<td>' + student.national_id + '</td>' +
+                            '<td>Actions</td>' +
+                            '</tr>';
+
+                        $('.records').append(newRow);
+                    }
+                }
+            });
+        }
+
+        // Trigger search by ID when the button is clicked
+        $('#search_Id-btn').click(function() {
+            performSearch();
+        });
+
+        // Trigger search by name when the button is clicked
+        $('#search_Name-btn').click(function() {
+            performSearch();
+        });
+    });
+</script>
 
 <table class="std-table">
 	<caption>Student Data Table<br></caption>
@@ -29,13 +84,30 @@
 		</tr>
 	</thead>
 	<tbody class="records">
+		{% for student in students %}
+		<tr>
+			<td>{{ student.StuID }}</td>
+			<td>{{ student.StuName}}</td>
+			<td>{{ student.DOB }}</td>
+			<td>{{ student.GPA }}</td>
+			<td>{{ student.Gender }}</td>
+			<td>{{ student.Level }}</td>
+			<td>{{ student.Status }}</td>
+			<td>{{ student.Department }}</td>
+			<td>{{ student.Email }}</td>
+			<td>{{ student.Mobile }}</td>
+			<td>{{ student.Nationality }}</td>
+			<td>{{ student.NationalityID }}</td>
+			<td>Actions</td>
+		</tr>
+		{% endfor %}
 	</tbody>
 </table>
 <div class="add-status-buttons">
 	<a href="/add_student"><button>Add Student</button></a>
 	<a href="/in_acitve_student"><button>Students Status</button></a>
 </div>
-<script src={% static 'DashBoard.js' %}></script>
+{% comment %} <script src={% static 'DashBoard.js' %}></script> {% endcomment %}
 <script src={% static 'RistrictedPages.js' %}></script>
 
 {% endblock content %}

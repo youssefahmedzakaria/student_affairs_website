@@ -133,3 +133,35 @@ def register_new_admin(request):
         
         return redirect('RegisterNewAdmin')  
 
+def dashboard_view(request):
+    students = Data_Student.objects.all()
+    return render(request, 'DashBoard.html', {'students': students})
+
+def search_students(request):
+    search_id = request.GET.get('search_id')
+    search_name = request.GET.get('search_name')
+
+    students = Data_Student.objects.all()
+    if search_id:
+        students = students.filter(StuID=search_id)
+    if search_name:
+        students = students.filter(StuName__icontains=search_name)
+
+    student_list = []
+    for student in students:
+        student_list.append({
+            'id': student.StuID,
+            'name': student.StuName,
+            'dob': student.DOB,
+            'gpa': student.GPA,
+            'gender': student.Gender,
+            'level': student.level,
+            'status': student.Status,
+            'department': student.Department,
+            'email': student.Email,
+            'mobile': student.Mobile,
+            'nationality': student.Nationality,
+            'national_id': student.NationalityID,
+        })
+
+    return JsonResponse({'students': student_list})
