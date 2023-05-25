@@ -1,11 +1,10 @@
-from django.http import HttpResponse, HttpResponseRedirect,  JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Data_Student
-
 
 from .models import AdminsData
 import json
@@ -48,9 +47,12 @@ def AddStudent_record(request):
     nationality = request.POST['Nationality']
     nationalID = request.POST['National ID']
     Student = Data_Student(StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
-                Department=department, Email=email, Mobile=mobile, Nationality=nationality, NationalityID=nationalID)
+                           Department=department, Email=email, Mobile=mobile, Nationality=nationality,
+                           NationalityID=nationalID)
     Student.save()
-    return HttpResponseRedirect(reverse('DashBoard'))
+    return HttpResponseRedirect(reverse('dashboard_view'))
+
+
 ############################################################
 
 
@@ -61,6 +63,7 @@ def index(request):
 
 def login(request):
     return render(request, 'login.html')
+
 
 def AboutUs(request):
     template = loader.get_template('AboutUs.html')
@@ -84,7 +87,7 @@ def home(request):
 
 def In_AcitveStudent(request):
     stds_data = Data_Student.objects.all()
-    
+
     context = {
         'stds_data': stds_data,
     }
@@ -110,6 +113,7 @@ def validate_login(request):
 
     return JsonResponse({'message': 'Invalid request method.'})
 
+
 def register_new_admin(request):
     if request.method == 'POST':
         first_name = request.POST['firstname']
@@ -126,16 +130,19 @@ def register_new_admin(request):
         if admin_exists:
             return render(request, 'RegisterNewAdmin.html', {'error': 'Admin with this email already exists'})
 
-        admin = AdminsData(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
+        admin = AdminsData(first_name=first_name, last_name=last_name, username=username, email=email,
+                           password=password)
         admin.save()
-        
+
         messages.success(request, 'Registered successfully!')
-        
-        return redirect('RegisterNewAdmin')  
+
+        return redirect('RegisterNewAdmin')
+
 
 def dashboard_view(request):
     students = Data_Student.objects.all()
     return render(request, 'DashBoard.html', {'students': students})
+
 
 def search_students(request):
     search_id = request.GET.get('search_id')
