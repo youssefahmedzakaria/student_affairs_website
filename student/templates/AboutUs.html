@@ -3,9 +3,9 @@
 {% block content %}
 
 
-
-<table>
-    <caption>Our Team Members<br></caption>
+<div style="display: flex; justify-content: center;">
+    <table class="std-table" style="margin-top: 90px;">
+        <caption>Our Team Members<br></caption>
     <thead>
         <tr>
             <td><b>Name </td></b>
@@ -46,15 +46,16 @@
             <td>s21</td>
         </tr>
     </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3">Supervised by Dr.Neamat El-Tazi</td>
-        </tr>
-    </tfoot>
-</table>
 
-</ul>
+
 </table>
+</div>
+
+<div style="display: flex; align-items: center;align-self: center;">
+    <p style="font-size: larger;"><b>Supervised by Dr. Neamat El-Tazi</b></p>
+  </div>
+
+
 
 
 <script src="{% static 'RistrictedPages.js' %}"></script>
