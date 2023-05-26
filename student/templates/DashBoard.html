@@ -4,7 +4,7 @@
 {% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Function to perform the search
         function performSearch() {
             var searchId = $('#search_Id').val();
@@ -17,7 +17,7 @@
                     'search_name': searchName
                 },
                 dataType: 'json',
-                success: function(data) {
+                success: function (data) {
                     // Clear the existing table rows
                     $('.records').empty();
 
@@ -37,7 +37,7 @@
                             '<td>' + student.mobile + '</td>' +
                             '<td>' + student.nationality + '</td>' +
                             '<td>' + student.national_id + '</td>' +
-                            '<td>Actions</td>' +
+                            '<td><button class="button-edit">Edit</button><button class="button-delete">Delete</button></td >' +
                             '</tr>';
 
                         $('.records').append(newRow);
@@ -47,67 +47,69 @@
         }
 
         // Trigger search by ID when the button is clicked
-        $('#search_Id-btn').click(function() {
+        $('#search_Id-btn').click(function () {
             performSearch();
         });
 
         // Trigger search by name when the button is clicked
-        $('#search_Name-btn').click(function() {
+        $('#search_Name-btn').click(function () {
             performSearch();
         });
     });
 </script>
 
 <table class="std-table">
-	<caption>Student Data Table<br></caption>
-	<thead class="header-info">
-		<tr>
-			<th class="form-in-table">ID
-				<input type="number" id="search_Id" name="search_Id" placeholder="Enter ID" required>
-				<button id="search_Id-btn">Search</button>
-			</th>
-			<th class="form-in-table">Name
-				<input type="text" id="search_Name" name="search_Name" placeholder="Enter name..." required>
-				<button id="search_Name-btn">Search</button>
-			</th>
-			<th>DOB</th>
-			<th>GPA</th>
-			<th>Gender</th>
-			<th>Level</th>
-			<th>Status</th>
-			<th>Department</th>
-			<th>Email</th>
-			<th>mobile</th>
-			<th>Nationality</th>
-			<th>National ID</th>
-			<th>Actions</th>
-		</tr>
-	</thead>
-	<tbody class="records">
-		{% for student in students %}
-		<tr>
-			<td>{{ student.StuID }}</td>
-			<td>{{ student.StuName}}</td>
-			<td>{{ student.DOB }}</td>
-			<td>{{ student.GPA }}</td>
-			<td>{{ student.Gender }}</td>
-			<td>{{ student.level }}</td>
-			<td>{{ student.Status }}</td>
-			<td>{{ student.Department }}</td>
-			<td>{{ student.Email }}</td>
-			<td>{{ student.Mobile }}</td>
-			<td>{{ student.Nationality }}</td>
-			<td>{{ student.NationalityID }}</td>
-			<td>Actions</td>
-		</tr>
-		{% endfor %}
-	</tbody>
+    <caption>Student Data Table<br></caption>
+    <thead class="header-info">
+        <tr>
+            <th class="form-in-table">ID
+                <input type="number" id="search_Id" name="search_Id" placeholder="Enter ID" required>
+                <button id="search_Id-btn">Search</button>
+            </th>
+            <th class="form-in-table">Name
+                <input type="text" id="search_Name" name="search_Name" placeholder="Enter name..." required>
+                <button id="search_Name-btn">Search</button>
+            </th>
+            <th>DOB</th>
+            <th>GPA</th>
+            <th>Gender</th>
+            <th>Level</th>
+            <th>Status</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Nationality</th>
+            <th>National ID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody class="records">
+        {% for student in students %}
+        <tr>
+            <td>{{ student.StuID }}</td>
+            <td>{{ student.StuName}}</td>
+            <td>{{ student.DOB }}</td>
+            <td>{{ student.GPA }}</td>
+            <td>{{ student.Gender }}</td>
+            <td>{{ student.level }}</td>
+            <td>{{ student.Status }}</td>
+            <td>{{ student.Department }}</td>
+            <td>{{ student.Email }}</td>
+            <td>{{ student.Mobile }}</td>
+            <td>{{ student.Nationality }}</td>
+            <td>{{ student.NationalityID }}</td>
+            <td><button class="button-edit" data-index="{{ forloop.counter0 }}">Edit</button>
+                <button class="button-delete" data-index="{{ forloop.counter0 }}">Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 <div class="add-status-buttons">
-	<a href="/add_student"><button>Add Student</button></a>
-	<a href="/in_acitve_student"><button>Students Status</button></a>
+    <a href="/add_student"><button>Add Student</button></a>
+    <a href="/in_acitve_student"><button>Students Status</button></a>
 </div>
-{% comment %} <script src={% static 'DashBoard.js' %}></script> {% endcomment %}
+<script src={% static 'DashBoard.js' %}></script>
 <script src={% static 'RistrictedPages.js' %}></script>
 
 {% endblock content %}

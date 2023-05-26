@@ -3,7 +3,7 @@ from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
+from django.shortcuts import get_object_or_404
 from .models import Data_Student
 
 from .models import AdminsData
@@ -13,7 +13,7 @@ from django.contrib import messages
 import json
 
 
-##### Add Student
+# Add Student
 
 def AddStudent(request):
     template = loader.get_template('AddStudent.html')

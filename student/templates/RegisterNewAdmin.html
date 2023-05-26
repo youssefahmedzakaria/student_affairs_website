@@ -35,11 +35,12 @@
                 var alert = alerts[i];
                 setTimeout(function () {
                     alert.style.display = 'none';
-                }, 2000); 
+                }, 2000);
             }
         });
     </script>
 </head>
+
 <body>
     <div class="header-nav-container">
         <header>
@@ -54,47 +55,50 @@
     </div>
 
     <h2>Register New Admin</h2>
-<section>
-    {% if messages %}
+    <section>
+        {% if messages %}
         {% for message in messages %}
-            <div class="alert success">
-                {{ message }}
-            </div>
+        <div class="alert success">
+            {{ message }}
+        </div>
         {% endfor %}
-    {% endif %}
+        {% endif %}
 
-    {% if error %}
+        {% if error %}
         <div class="alert error">
             {{ error }}
         </div>
-    {% endif %}
-    <form class="register-form" method="post" action="{% url 'register_new_admin' %}">
-        {% csrf_token %}
-        <label for="firstname">First name</label>
-        <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
+        {% endif %}
+        <form class="register-form" method="post" action="{% url 'register_new_admin' %}">
+            {% csrf_token %}
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name" required><br>
 
-        <label for="lastname">Last name</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Last Name" required><br>
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name" required><br>
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Write a username without spaces" required><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Write a username without spaces" required><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="write a valid email" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="write a valid email" required><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Write a strong password" minlength="8"
+                required><br>
 
-        <label for="Conpassword">Confirm Password:</label>
-        <input type="password" id="Conpassword" name="Conpassword" placeholder="Write the same password" minlength="8" required><br>
-        
-        <input type="reset" value="Reset">
-        <input type="submit" value="Register"><br>
-        <a href="/login">Already Have An Account</a>
-    </form>
-</section>
+            <label for="Conpassword">Confirm Password:</label>
+            <input type="password" id="Conpassword" name="Conpassword" placeholder="Write the same password"
+                minlength="8" required><br>
 
+            <input type="reset" value="Reset">
+            <input type="submit" value="Register"><br>
+            <a href="/login">Already Have An Account</a>
+        </form>
+    </section>
 
-<script src={% static 'RistrictedPages.js' %}></script>
-<script src={% static 'RegisterNewAdmin.js' %}></script>
+    {% include 'footer.html' %}
+
+    <script src={% static 'RistrictedPages.js' %}></script>
+    <script src={% static 'RegisterNewAdmin.js' %}></script>
 </body>

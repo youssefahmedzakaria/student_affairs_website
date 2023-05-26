@@ -9,12 +9,9 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     color: #ffffff;
     font-family: "Microsoft Sans Serif";
-    margin: 0;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    margin-top: 200px;
 }
 
 /* CSS for headers */
@@ -45,7 +42,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -55,7 +52,8 @@ nav ul {
     padding: 0;
 
 }
-.menu__item{
+
+.menu__item {
     position: relative;
     display: flex;
     align-items: center;
@@ -64,17 +62,17 @@ nav ul {
     transition: 0.3s;
 }
 
-.menu__item > i {
+.menu__item>i {
     font-size: 2.2em;
 }
 
-.menu__item::after{
+.menu__item::after {
     position: absolute;
     display: inline-block;
     top: 50%;
     transform: translateY(-50%);
     left: 100%;
-    content:attr(data-tooltip);
+    content: attr(data-tooltip);
     margin-left: 15px;
     white-space: nowrap;
     padding: 7px 12px;
@@ -87,7 +85,7 @@ nav ul {
     transition: 0.3s;
 }
 
-.menu__item:hover::after{
+.menu__item:hover::after {
     opacity: 1;
     visibility: visible;
 }
@@ -120,7 +118,8 @@ a {
     flex-direction: column;
     text-align: center;
     font-size: x-large;
-    padding-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 /* CSS for tables */
@@ -197,7 +196,7 @@ button:hover {
 }
 
 .button-edit:hover {
-    background-color: #e64c66;
+    background-color: #2d3e50;
 }
 
 /* Delete Button */
@@ -436,5 +435,5 @@ button.our-chosen-project:hover {
 .alert.error {
     background-color: transparent;
     color: red;
-    border: 40px ;
+    border: 40px;
 }
