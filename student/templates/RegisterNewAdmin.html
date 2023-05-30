@@ -14,18 +14,19 @@
         .alert {
             padding: 10px;
             margin-bottom: 10px;
+            margin-top: 20px;
+            background-color: white;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .alert.success {
-            background-color: #dff0d8;
             color: #3c763d;
-            border: 1px solid #d6e9c6;
         }
 
         .alert.error {
-            background-color: #f2dede;
             color: #a94442;
-            border: 1px solid #ebccd1;
         }
     </style>
     <script>
@@ -35,7 +36,7 @@
                 var alert = alerts[i];
                 setTimeout(function () {
                     alert.style.display = 'none';
-                }, 2000);
+                },3000);
             }
         });
     </script>

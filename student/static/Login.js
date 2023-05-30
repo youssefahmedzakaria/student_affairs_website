@@ -8,16 +8,15 @@ loginForm.addEventListener('submit', (event) => {
     const password = passwordInput.value;
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-    fetch('/validate_login/', {
-        method: 'POST',
+    $.ajax({
+        url: '/validate_login/',
+        type: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrfToken,
         },
-        body: JSON.stringify({ email, password }),
-    })
-        .then(response => response.json())
-        .then(data => {
+        data: JSON.stringify({ email, password }),
+        success: function(data) {
             if (data.valid) {
                 alert('Login successful!');
                 window.location.href = '../home';
@@ -25,8 +24,9 @@ loginForm.addEventListener('submit', (event) => {
             } else {
                 alert('Invalid email or password.');
             }
-        })
-        .catch(error => {
+        },
+        error: function(error) {
             console.error('An error occurred:', error);
-        });
+        }
+    });
 });
