@@ -17,7 +17,10 @@ This is a student management system web application that allows users to enable 
 - HTML
 - CSS
 - JavaScript
-- LocalStorage for data persistence
+- Ajax
+- Django framework
+- SessionStorage
+<!-- - LocalStorage for data persistence -->
 
 
 ## Usage
@@ -27,4 +30,5 @@ This is a student management system web application that allows users to enable 
 - To edit a student, click on the "Edit" button next to the student's information, make the necessary changes, and click "Save" to update the information.
 - To delete a student, click on the "Delete" button next to the student's information.
 - To add a new student, click on the "Add Student" button and fill in the required information in the form.
-- The application uses LocalStorage for data persistence, so all changes made will be stored locally in the browser.
+- The application uses Django as the BackEnd and uses it's database so save the data in it.
+<!-- - The application uses LocalStorage for data persistence, so all changes made will be stored locally in the browser. -->
