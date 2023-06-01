@@ -19,7 +19,6 @@ def AddStudent(request):
     template = loader.get_template('AddStudent.html')
     return HttpResponse(template.render({}, request))
 
-
 @csrf_exempt
 def AddStudent_record(request):
     StId = request.POST['studentId']
@@ -50,7 +49,7 @@ def AddStudent_record(request):
                            Department=department, Email=email, Mobile=mobile, Nationality=nationality,
                            NationalityID=nationalID)
     Student.save()
-    return HttpResponseRedirect(reverse('dashboard_view'))
+    return HttpResponseRedirect(reverse('dashboard'))
 
 
 ############################################################
@@ -68,7 +67,6 @@ def login(request):
 def AboutUs(request):
     template = loader.get_template('AboutUs.html')
     return HttpResponse(template.render())
-
 
 def DashBoard(request):
     template = loader.get_template('DashBoard.html')

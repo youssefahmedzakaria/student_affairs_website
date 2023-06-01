@@ -340,17 +340,13 @@ form a:hover {
 }
 
 /* CSS for footer in all pages */
-footer {
-    position: fixed;
+
+#footer{
     left: 0;
     bottom: 0;
     width: 100%;
     color: #ffffff;
     text-align: center;
-    background-color: #212d3a;
-}
-
-footer p {
     margin-top: 3px;
     padding-top: 10px;
     font-size: small;
