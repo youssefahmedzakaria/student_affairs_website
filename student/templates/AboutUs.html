@@ -6,54 +6,41 @@
 <div style="display: flex; justify-content: center;">
     <table class="std-table" style="margin-top: 90px;">
         <caption>Our Team Members<br></caption>
-    <thead>
-        <tr>
-            <td><b>Name </td></b>
-            <td><b>ID </td></b>
-            <td><b>Section</td></b>
+        <thead>
+            <tr>
+                <td><b>Name </td></b>
+                <td><b>ID </td></b>
+                <td><b>Section</td></b>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td> Doaa Ali El-Sayed </td>
-            <td>20211034</td>
-            <td>s21</td>
-        </tr>
-        <tr>
-            <td> Tareq Mahfouz Mohamed</td>
-            <td>20211058</td>
-            <td>s24</td>
-        </tr>
-        <tr>
-            <td> Youssef Ahmed Zakaria</td>
-            <td>20210458</td>
-            <td>s21</td>
-        </tr>
-        <tr>
-            <td> Ziad Nasser Shaaban</td>
-            <td>20210153</td>
-            <td>s21</td>
-        </tr>
-        <tr>
-            <td> Omnia Magdy Abdelnaby </td>
-            <td>20211018</td>
-            <td>s23</td>
-        </tr>
-        <tr>
-            <td> Youssef Mahmoud Okasha </td>
-            <td>20210486</td>
-            <td>s21</td>
-        </tr>
-    </tbody>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in members %}
+            <tr>
+                <td>
+                    {{ i.name }}
+                </td>
+                <td>
+                    {{ i.memid }}
+                </td>
+                <td>
+                    {{ i.section }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
 
 
-</table>
+    </table>
 </div>
 
-<div style="display: flex; align-items: center;align-self: center;">
-    <p style="font-size: larger;"><b>Supervised by Dr. Neamat El-Tazi</b></p>
-  </div>
+<div style="display: flex; align-items: center; align-self: center;">
+    <p style="font-size: larger;"><b>Supervised by:</b><br><br>
+        <b>Dr. Neamat El-Tazi</b><br>
+        <b>Dr. Laila Esheiba</b><br>
+        <b>Eng. Ahmed AbdelAziz</b>
+    </p><br>
+</div>
 
 
 
