@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 from .models import Data_Student
-
+from .models import TeamData
 from .models import AdminsData
 import json
 from django.shortcuts import render, redirect
@@ -65,8 +65,11 @@ def login(request):
 
 
 def AboutUs(request):
-    template = loader.get_template('AboutUs.html')
-    return HttpResponse(template.render())
+    teamData = TeamData.objects.all()
+    context ={
+        'members' : teamData,
+    }
+    return render(request, 'AboutUs.html', context)
 
 def DashBoard(request):
     template = loader.get_template('DashBoard.html')
