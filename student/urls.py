@@ -21,4 +21,6 @@ urlpatterns = [
     path('dash_board/', views.dashboard_view, name='dashboard'),
     path('search_students/', views.search_students, name='search_students'),
     path('add_student', views.AddStudent, name = 'AddStudent'),
+
+    path('deleteStudent/<int:id>', views.delete, name = 'Delete'),
 ]

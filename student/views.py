@@ -170,3 +170,10 @@ def search_students(request):
         })
 
     return JsonResponse({'students': student_list})
+
+
+def delete(request, id):
+    student = Data_Student.objects.get(id = id)
+    student.delete()
+    return HttpResponseRedirect(reverse('dashboard'))
+    

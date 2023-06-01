@@ -1,7 +1,5 @@
 
-function deleteStudent(stdId) {
 
-}
 var editButtons = document.getElementsByClassName("button-edit");
 for (var i = 0; i < editButtons.length; i++) {
     editButtons[i].addEventListener("click", function () {
@@ -13,7 +11,12 @@ for (var i = 0; i < editButtons.length; i++) {
 
 var deleteButtons = document.getElementsByClassName("button-delete");
 for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].addEventListener("click", function (e) {
-        deleteStudent(e.target.parentNode.parentNode.getAttribute("recordId"));
+    deleteButtons[i].addEventListener("click", function () {
+        var index =  parseInt(this.getAttribute("data-index"));
+        var toDelete = '../deleteStudent/'+ (index);
+        window.location.href = toDelete;
+        
     });
 }
+
+
