@@ -74,8 +74,7 @@ def DashBoard(request):
 
 
 def EditStudent(request):
-    template = loader.get_template('EditStudent.html')
-    return HttpResponse(template.render())
+    return render(request, 'EditStudent.html', context={'csrf_token': request.COOKIES['csrftoken']})
 
 
 def home(request):
@@ -177,3 +176,26 @@ def delete(request, id):
     student.delete()
     return HttpResponseRedirect(reverse('dashboard'))
     
+def editS(request,id):
+    student = get_object_or_404(Data_Student, StuID=id)
+
+    if request.method == 'POST':
+        student.StuID = request.POST['studentId']
+        student.StuName = request.POST['name']
+        student.DOB = request.POST['date']
+        student.GPA = request.POST['gpa']
+        student.Gender = request.POST['gender']
+        student.level = request.POST['level']
+        student.Status = request.POST['status']
+        student.Department = request.POST['department']
+        student.Email = request.POST['email']
+        student.Mobile = request.POST['mobile']
+        student.Nationality = request.POST['Nationality']
+        student.NationalityID = request.POST['National ID']
+        
+        student.save()
+        
+        return redirect('dashboard')
+    
+    return render(request, 'edit_student.html', {'student': student})
+

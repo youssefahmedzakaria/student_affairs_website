@@ -98,7 +98,8 @@
             <td>{{ student.Mobile }}</td>
             <td>{{ student.Nationality }}</td>
             <td>{{ student.NationalityID }}</td>
-            <td><button class="button-edit" data-index="{{ forloop.counter0 }}">Edit</button>
+            <td>
+                <a href="/EditStudent" class="button-edit">Edit</a>
                 <button class="button-delete" data-index="{{ student.id }}">Delete</button>
             </td>
         </tr>
