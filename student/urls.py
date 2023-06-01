@@ -8,7 +8,7 @@ urlpatterns = [
     path('about_us', views.AboutUs, name ='AboutUs'),
     path('add_student', views.AddStudent, name = 'AddStudent'),
     # path('dash_board', views.DashBoard , name ='DashBoard'),
-    path('EditStudent', views.EditStudent, name ='EditStudent'),
+    path('edit_student', views.EditStudent, name ='EditStudent'),
     path('in_acitve_student', views.In_AcitveStudent, name ='In_AcitveStudent'),
     path('login',views.login , name ='Login'),
     path('RegisterNewAdmin', views.RegisterNewAdmin, name = 'RegisterNewAdmin'),
@@ -23,7 +23,6 @@ urlpatterns = [
     path('add_student', views.AddStudent, name = 'AddStudent'),
 
     path('deleteStudent/<int:id>', views.delete, name = 'Delete'),
-
-    path('editS/<int:id>/', views.editS, name='editS')
-
+    path('edit_student/<int:id>', views.edit, name= 'editStudent'),
+    path('edit_student/editStudent/<int:id>', views.update, name= 'updateStudent')
 ]

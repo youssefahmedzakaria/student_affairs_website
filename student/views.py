@@ -77,7 +77,8 @@ def DashBoard(request):
 
 
 def EditStudent(request):
-    return render(request, 'EditStudent.html', context={'csrf_token': request.COOKIES['csrftoken']})
+    template = loader.get_template('EditStudent.html')
+    return HttpResponse(template.render())
 
 
 def home(request):
@@ -178,27 +179,47 @@ def delete(request, id):
     student = Data_Student.objects.get(id = id)
     student.delete()
     return HttpResponseRedirect(reverse('dashboard'))
-    
-def editS(request,id):
-    student = get_object_or_404(Data_Student, StuID=id)
 
-    if request.method == 'POST':
-        student.StuID = request.POST['studentId']
-        student.StuName = request.POST['name']
-        student.DOB = request.POST['date']
-        student.GPA = request.POST['gpa']
-        student.Gender = request.POST['gender']
-        student.level = request.POST['level']
-        student.Status = request.POST['status']
-        student.Department = request.POST['department']
-        student.Email = request.POST['email']
-        student.Mobile = request.POST['mobile']
-        student.Nationality = request.POST['Nationality']
-        student.NationalityID = request.POST['National ID']
-        
-        student.save()
-        
-        return redirect('dashboard')
-    
-    return render(request, 'edit_student.html', {'student': student})
 
+def edit(request, id):
+    student = Data_Student.objects.get(id = id)
+    template = loader.get_template('EditStudent.html')
+    context = {
+        'student' : student,
+    }
+    return HttpResponse(template.render(context , request))
+
+
+def update(request, id):
+    Student = Data_Student(id= id,StuID="", StuName="", DOB="", GPA="", Gender="", level="", Status="",
+                           Department="", Email="", Mobile="", Nationality="",
+                           NationalityID="")
+    StId = request.POST['studentId']
+    stdname = request.POST['name']
+    date = request.POST['date']
+    gpa = request.POST['gpa']
+    ############################
+    RadioG = request.POST.get('gender')
+    if RadioG == 'Male':
+        gender = 'Male'
+    else:
+        gender = 'Female'
+    ############################
+    level = request.POST['level']
+    ############################
+    RadioS = request.POST.get('status')
+    if RadioS == 'Active':
+        status = 'Active'
+    else:
+        status = 'Inactive'
+    ############################
+    department = request.POST['department']
+    email = request.POST['email']
+    mobile = request.POST['mobile']
+    nationality = request.POST['Nationality']
+    nationalID = request.POST['National ID']
+    Student = Data_Student(id= id,StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
+                           Department=department, Email=email, Mobile=mobile, Nationality=nationality,
+                           NationalityID=nationalID)
+    Student.save()
+    return HttpResponseRedirect(reverse('dashboard'))

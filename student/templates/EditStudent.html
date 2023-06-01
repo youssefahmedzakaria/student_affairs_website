@@ -5,27 +5,15 @@
 
 <h2>Edit Student Data</h2>
 <div class="container">
-    <form id="edit-form" class="edit-std-form" method="post" action="">
-        {% csrf_token %}
-        
-        {% include 'stdform.html' %}
-        
-        <input type="submit" id="save" value="Save Edited Data">
-    </form>
-    
-</div>
-<script>
-    const form = document.getElementById('edit-form');
-    const idInput = document.getElementById('id');
+    <form class="edit-std-form" action="editStudent/{{student.id}}" method="post">{% csrf_token %}
+        {% include 'editForm.html' %}
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const id = idInput.value;
-      form.action = `/editS/${id}/`;
-      form.submit();
-    });
-  </script>
+        <input type="submit" id="save" value="Save Edited Data">
+
+    </form>
+</div>
+
 <script src={% static 'RistrictedPages.js' %}></script>
-<!-- <script src={% static 'EditStudent.js' %}></script> -->
+<script src={% static 'EditStudent.js' %}></script>
 
 {% endblock content %}

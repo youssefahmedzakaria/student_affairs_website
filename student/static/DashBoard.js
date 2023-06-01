@@ -4,7 +4,7 @@ var editButtons = document.getElementsByClassName("button-edit");
 for (var i = 0; i < editButtons.length; i++) {
     editButtons[i].addEventListener("click", function () {
         var index = parseInt(this.getAttribute("data-index"));
-        var toEditPage = '../edit_student?record=' + (index + 1);
+        var toEditPage = '../edit_student/' + (index);
         window.location.href = toEditPage;
     });
 }

@@ -4,7 +4,7 @@ from django.db import models
 class Data_Student(models.Model):
     StuID = models.IntegerField()
     StuName = models.CharField(max_length=255)
-    DOB = models.DateField()
+    DOB = models.CharField(max_length=255)
     GPA = models.CharField(max_length=255)
     Gender = models.CharField(max_length=255)
     level = models.IntegerField()
