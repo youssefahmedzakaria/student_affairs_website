@@ -185,14 +185,20 @@ button:hover {
     background-color: #2d3e50;
 }
 
-/* Edit Button */
-.button-edit {
-    background-color: #272192;
+.button-edit,
+.button-delete {
     color: #ffffff;
     padding: 4px 16px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    width: 100px
+}
+
+/* Edit Button */
+.button-edit {
+    background-color: #272192;
+    
 }
 
 .button-edit:hover {
@@ -202,11 +208,7 @@ button:hover {
 /* Delete Button */
 .button-delete {
     background-color: #c70202;
-    color: #ffffff;
-    padding: 4px 16px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+    
 }
 
 .button-delete:hover {

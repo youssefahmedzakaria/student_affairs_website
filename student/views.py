@@ -176,7 +176,7 @@ def search_students(request):
 
 
 def delete(request, id):
-    student = Data_Student.objects.get(id = id)
+    student = get_object_or_404(Data_Student, StuID=id)
     student.delete()
     return HttpResponseRedirect(reverse('dashboard'))
 
