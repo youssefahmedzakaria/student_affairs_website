@@ -96,7 +96,7 @@ function hideLoggedOutPages() {
     var aboutUsLItem = document.createElement("i");
     aboutUsLItem.setAttribute("class", "material-icons");
     aboutUsLItem.appendChild(document.createTextNode("groups"));
-    
+
 
     var aboutUsAnchor = document.createElement("a");
     aboutUsAnchor.href = "/about_us";

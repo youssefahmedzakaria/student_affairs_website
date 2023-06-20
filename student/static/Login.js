@@ -16,7 +16,7 @@ loginForm.addEventListener('submit', (event) => {
             'X-CSRFToken': csrfToken,
         },
         data: JSON.stringify({ email, password }),
-        success: function(data) {
+        success: function (data) {
             if (data.valid) {
                 alert('Login successful!');
                 window.location.href = '../home';
@@ -25,7 +25,7 @@ loginForm.addEventListener('submit', (event) => {
                 alert('Invalid email or password.');
             }
         },
-        error: function(error) {
+        error: function (error) {
             console.error('An error occurred:', error);
         }
     });

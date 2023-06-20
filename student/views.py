@@ -19,6 +19,7 @@ def AddStudent(request):
     template = loader.get_template('AddStudent.html')
     return HttpResponse(template.render({}, request))
 
+
 @csrf_exempt
 def AddStudent_record(request):
     StId = request.POST['studentId']
@@ -66,10 +67,11 @@ def login(request):
 
 def AboutUs(request):
     teamData = TeamData.objects.all()
-    context ={
-        'members' : teamData,
+    context = {
+        'members': teamData,
     }
     return render(request, 'AboutUs.html', context)
+
 
 def DashBoard(request):
     template = loader.get_template('DashBoard.html')
@@ -158,7 +160,8 @@ def search_students(request):
     student_list = []
     for student in students:
         student_list.append({
-            'id': student.StuID,
+            'id': student.id,
+            'stuId': student.StuID,
             'name': student.StuName,
             'dob': student.DOB,
             'gpa': student.GPA,
@@ -182,16 +185,16 @@ def delete(request, id):
 
 
 def edit(request, id):
-    student = Data_Student.objects.get(id = id)
+    student = Data_Student.objects.get(id=id)
     template = loader.get_template('EditStudent.html')
     context = {
-        'student' : student,
+        'student': student,
     }
-    return HttpResponse(template.render(context , request))
+    return HttpResponse(template.render(context, request))
 
 
 def update(request, id):
-    Student = Data_Student(id= id,StuID="", StuName="", DOB="", GPA="", Gender="", level="", Status="",
+    Student = Data_Student(id=id, StuID="", StuName="", DOB="", GPA="", Gender="", level="", Status="",
                            Department="", Email="", Mobile="", Nationality="",
                            NationalityID="")
     StId = request.POST['studentId']
@@ -218,7 +221,7 @@ def update(request, id):
     mobile = request.POST['mobile']
     nationality = request.POST['Nationality']
     nationalID = request.POST['National ID']
-    Student = Data_Student(id= id,StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
+    Student = Data_Student(id=id, StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
                            Department=department, Email=email, Mobile=mobile, Nationality=nationality,
                            NationalityID=nationalID)
     Student.save()

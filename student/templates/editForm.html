@@ -10,14 +10,14 @@
 <label for="gpa">GPA:</label>
 <input type="number" id="gpa" name="gpa" min="0" max="4" step="0.01" required value="{{student.GPA}}"><br><br>
 <div id="list_id">
-<label class="container">Gender:</label>
-<label>
-    <input type="radio" id="radio-male" name="gender" value="Male" checked> Male
-</label>
-<label>
-    <input type="radio" id="radio-female" name="gender" value="Female"> Female
-</label>
-<br><br><br>
+    <label class="container">Gender:</label>
+    <label>
+        <input type="radio" id="radio-male" name="gender" value="Male" checked> Male
+    </label>
+    <label>
+        <input type="radio" id="radio-female" name="gender" value="Female"> Female
+    </label>
+    <br><br><br>
 </div>
 
 <label class="drop">Choose a level:
@@ -32,7 +32,7 @@
 
 <label> Status: </label>
 <label>
-    <input type="radio" id="radio-active" name="status" value="Active"checked>Active
+    <input type="radio" id="radio-active" name="status" value="Active" checked>Active
 </label>
 <label>
     <input type="radio" id="radio-inactive" name="status" value="Inactive">Inactive
@@ -313,21 +313,21 @@
 <input type="hidden" id="status_AI" value="{{student.Status}}">
 
 <script>
-    var gg = document.getElementById("gender_MF").value; 
+    var gg = document.getElementById("gender_MF").value;
     if (gg == "Male") {
         radiobtn = document.getElementById("radio-male");
         radiobtn.checked = true;
     }
-    else{
+    else {
         radiobtn = document.getElementById("radio-female");
         radiobtn.checked = true;
     }
     var aa = document.getElementById("status_AI").value;
-    if (aa =="Active") {
+    if (aa == "Active") {
         radiobtn = document.getElementById("radio-active");
         radiobtn.checked = true;
     }
-    else{
+    else {
         radiobtn = document.getElementById("radio-inactive");
         radiobtn.checked = true;
     }
