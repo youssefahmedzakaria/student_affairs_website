@@ -11,7 +11,7 @@ let level = document.querySelector(".level");
 
 
 let sta = null;
-let active = document.querySelector('input[name="status"][value="active"]');
+let active = document.querySelector('input[name="status"][value="Active"]');
 let inactive = document.querySelector('input[name="status"][value="Inactive"]');
 
 let department = document.querySelector(".department");
@@ -43,7 +43,27 @@ submit.onclick = function () {
     } else if (inactive.checked) {
         sta = inactive.value;
     }
-    if ((id.value && stdname.value && date.value && gpa.value && gender && level.value && sta && department.value && email.value && mobile.value && nationality.value && nationalID.value) !== "") {
+    var status_stu = 'Absent';  
+    for(var i=0; i<arrayOfData.length; i++)  
+    {  
+        var ID = arrayOfData[i].Id; 
+        var Emml= arrayOfData[i].Email;  
+        var tel = arrayOfData[i].Mobile;
+        if(id.value == ID || email.value == Emml || mobile.value == tel){  
+            status_stu = 'Present'; 
+          break;  
+        }  
+    } 
+    let play = true;
+    if (status_stu == 'Present') {
+        alert("wrong entry(ID)");
+        play = false;
+          
+    }else{
+        play = true;
+    }
+
+    if (play && (id.value && stdname.value && date.value && gpa.value && gender && level.value && sta && department.value && email.value && mobile.value && nationality.value && nationalID.value) !== "") {
         const data = {
             rcrdId: Date.now(),
             Id: id.value,

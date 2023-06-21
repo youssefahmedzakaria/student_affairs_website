@@ -46,10 +46,29 @@ def AddStudent_record(request):
     mobile = request.POST['mobile']
     nationality = request.POST['Nationality']
     nationalID = request.POST['National ID']
+
+    student_exists_eml = Data_Student.objects.filter(Email=email).exists()
+    if student_exists_eml:
+        return render(request, 'AddStudent.html', {'error': 'Student with this email already exists'})
+
+    student_exists_ID = Data_Student.objects.filter(StuID=StId).exists()
+    if student_exists_ID:
+        return render(request, 'AddStudent.html', {'error': 'Student with this ID already exists'})
+
+    student_exists_MO = Data_Student.objects.filter(Mobile=mobile).exists()
+    if student_exists_MO:
+        return render(request, 'AddStudent.html', {'error': 'Student with this Mobile already exists'})
+
+    student_exists_NOID = Data_Student.objects.filter(NationalityID=nationalID).exists()
+    if student_exists_NOID:
+        return render(request, 'AddStudent.html', {'error': 'Student with this NationalityID already exists'})
+
+
     Student = Data_Student(StuID=StId, StuName=stdname, DOB=date, GPA=gpa, Gender=gender, level=level, Status=status,
                            Department=department, Email=email, Mobile=mobile, Nationality=nationality,
                            NationalityID=nationalID)
     Student.save()
+    # messages.success(request, 'Student ADD successfully!')
     return HttpResponseRedirect(reverse('dashboard'))
 
 
@@ -154,8 +173,20 @@ def search_students(request):
     students = Data_Student.objects.all()
     if search_id:
         students = students.filter(StuID=search_id)
+        students = students.filter(Status="Active")
     if search_name:
-        students = students.filter(StuName__icontains=search_name)
+        students = students.filter(
+            StuName__icontains=search_name)
+        students = students.filter(Status="Active")
+
+    # search_id = request.GET.get('search_id')
+    # search_name = request.GET.get('search_name')
+
+    # students = Data_Student.objects.all()
+    # if search_id:
+    #     students = students.filter(StuID=search_id)
+    # if search_name:
+    #     students = students.filter(StuName__icontains=search_name)
 
     student_list = []
     for student in students:

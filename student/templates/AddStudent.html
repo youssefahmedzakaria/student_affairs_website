@@ -2,7 +2,50 @@
 {% load static %}
 
 {% block content %}
+<style>
+    .alert {
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        background-color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .alert.success {
+        color: #3c763d;
+    }
+
+    .alert.error {
+        color: #a94442;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var alerts = document.getElementsByClassName('alert');
+        for (var i = 0; i < alerts.length; i++) {
+            var alert = alerts[i];
+            setTimeout(function () {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+    });
+</script>
 <h2>Add Student</h2>
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert success">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    {% if error %}
+    <div class="alert error">
+        {{ error }}
+    </div>
+    {% endif %}
 <div class="container">
     <form class="std-form" action="addStudent/" method="post">{% csrf_token %}
         {% include 'stdform.html' %}
